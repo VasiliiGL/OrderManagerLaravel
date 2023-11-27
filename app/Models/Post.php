@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Egulias\EmailValidator\Warning\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,4 +16,9 @@ class Post extends Model
         "preview",
         "thumbnail"
     ];
+
+    public function comments()
+    {
+        $this->hasMany(Comment::class)->orderBy("created_at");
+    }
 }
