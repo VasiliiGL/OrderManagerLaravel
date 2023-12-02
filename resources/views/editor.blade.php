@@ -1,4 +1,4 @@
-<form method="post" action="{{ url('store') }}">
+<form method="post" action="{{ url('/store') }}">
     <p><textarea name="editor" id="editor" ></textarea></p>
  
     @csrf
