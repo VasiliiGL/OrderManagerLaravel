@@ -184,7 +184,7 @@
 					<ul>
 					<li><a href="home.html">Homepage</a></li>
 					<li>
-							<span class="opener">Компании</span>
+							<span class="opener">Наши Компании</span>
 							<ul>
 								<li><a href="#">ООО ИжПЗ</a></li>
 								<li><a href="#">ООО ИжПЗ-Связь</a></li>
@@ -202,8 +202,9 @@
 							</ul>
 						</li>
 						<li>
-							<span class="opener">Отработка заказа</span>
+							<span class="opener">Этапы выполнения заказа</span>
 							<ul>
+								<li><a href="#">Заказы</a></li>
 								<li><a href="#">Номенклатура</a></li>
 								<li><a href="#">Ценообразование</a></li>
 								<li><a href="#">Договор</a></li>
@@ -219,20 +220,20 @@
 			<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>Ante interdum</h2>
+						<h2>Новости</h2>
 					</header>
 					<div class="mini-posts">
 						<article>
-							<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							<a href="#" class="image"><img src="images/Микроэлектроника2023.png" alt="" /></a>
+							<p>С 9 по 14 октября ИжПЗ участвует в российском форуме «Микроэлектроника 2023» в г. Сочи</p>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							<a href="#" class="image"><img src="images/TrafficInfraTecExpo.jpg" alt="" /></a>
+							<p>С 10 по 12 октября представители ИжПЗ посетили столицу Индии, Нью-Дели, где состоялась международная выставка TrafficInfra Tech Expo. Площадка объединила между собой специалистов в области дорожного движения со всего мира.</p>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+							<a href="#" class="image"><img src="images/Нефтегаз.jpg" alt="" /></a>
+							<p>Выставка «Нефтегаз» входит в десятку крупнейших нефтегазовых смотров мира. Проводится ежегодно вместе с Национальным нефтегазовым форумом — ключевым событием деловой программы. В этом году в мероприятии участвовали более 700 компаний из России, Китая, Южной Кореи, Турции, Индии, Италии, Казахстана и других стран.</p>
 						</article>
 					</div>
 					<ul class="actions">
