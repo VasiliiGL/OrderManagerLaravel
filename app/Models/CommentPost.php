@@ -14,4 +14,16 @@ class CommentPost extends Model
         "user_id",
         "post_id"
     ];
+
+    public function post()
+    {
+        $this ->belongsTo(Post::class);
+    }
+
+    public function user()
+    {
+        $this ->belongsTo(User::class);
+    }
+
+
 }
