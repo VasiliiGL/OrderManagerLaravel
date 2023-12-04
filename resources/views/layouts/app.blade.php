@@ -18,7 +18,7 @@
 
 			<!-- Header -->
 				<header id="header">
-					<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
+					<a href="index.html" class="logo"><strong>Менеджер заказов</strong> ИжПЗ</a>
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -32,51 +32,74 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>Hi, I’m Editorial<br />
-							by HTML5 UP</h1>
-							<p>A free and fully responsive site template</p>
+							<h1>Группа компаний ИжПЗ<br />
+							АО ИжПЗ</h1>
+							<p>Российская группа приборостроительных компаний</p>
 						</header>
-						<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+						<p>Современные технологии, высококвалифицированные кадры позволяют предприятию успешно конкурировать на рынке и предлагать самые совершенные конструкторские решения</p>
+						<p>• Бортовые цифровые вычислительные комплексы;
+							• Космические средства связи;
+							• Телеметрические системы;
+							• Навигационная аппаратура;
+							• Телекоммуникационное оборудование;
+							• Системы визуального контроля;
+							• Робототехника;
+							• Контрольно-измерительная аппаратура.
+						</p>
 						<ul class="actions">
-							<li><a href="#" class="button big">Learn More</a></li>
+							<li><a href="#" class="button big">продолжение...</a></li>
 						</ul>
 					</div>
 					<span class="image object">
-						<img src="images/pic10.jpg" alt="" />
+						<img src="images/ИжПЗ.jpg" alt="" />
 					</span>
 				</section>
 
 			<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>Erat lacinia</h2>
+						<h2>Производственные направления</h2>
 					</header>
 					<div class="features">
 						<article>
-							<span class="icon fa-gem"></span>
+							<span class="icon solid fa-sharp fa-thin fa-business-time"></span>
 							<div class="content">
-								<h3>Portitor ullamcorper</h3>
+								<h3>Проектирование, разработка</h3>
 								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 							</div>
 						</article>
 						<article>
 							<span class="icon solid fa-paper-plane"></span>
 							<div class="content">
-								<h3>Sapien veroeros</h3>
+								<h3>Поставка и испытания ЭКБ</h3>
 								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 							</div>
 						</article>
 						<article>
 							<span class="icon solid fa-rocket"></span>
 							<div class="content">
-								<h3>Quam lorem ipsum</h3>
+								<h3>Производство гибридных микросборок</h3>
 								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 							</div>
 						</article>
 						<article>
-							<span class="icon solid fa-signal"></span>
+							<span class="icon solid fa-solid fa-signal"></span>
 							<div class="content">
-								<h3>Sed magna finibus</h3>
+								<h3>Производство печатных плат</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-solid fa-signal"></span>
+							<div class="content">
+								<h3>Механическое производство</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-rocket"></span>
+							<div class="content">
+								<h3>Сборочное производство</h3>
 								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 							</div>
 						</article>
@@ -86,60 +109,59 @@
 			<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>Ipsum sed dolor</h2>
+						<h2>Производственные компаний</h2>
 					</header>
 					<div class="posts">
 						<article>
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-							<h3>Interdum aenean</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ</h3>
+							<p>Бортовые и наземные радиотехнические комплексы, телеметрические системы, системы визуального контроля, системы связи, робототехника.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-							<h3>Nulla amet dolore</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ-Связь</h3>
+							<p>Навигационное оборудование, системы связи, контрольно-проверочная аппаратура, системы оповещения.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-							<h3>Tempus ullamcorper</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ-Тестирование</h3>
+							<p>Испытательный центр: ЭКБ отечественного и иностранного производства; радиоэлектронной аппаратуры и другой готовой продукции.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-							<h3>Sed etiam facilis</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ-Механика</h3>
+							<p>Изделия точной механики, оснастка.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-							<h3>Feugiat lorem aenean</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ-Фотон</h3>
+							<p>Печатные платы, автоматический монтаж элементов.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>
 							<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-							<h3>Amet varius aliquam</h3>
-							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<h3>ООО ИжПЗ-Телеком</h3>
+							<p>Технологическая радиосвязь, оборудование для сотовой связи, сенсорика.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">More</a></li>
+								<li><a href="#" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 					</div>
 				</section>
-
 		</div>
 	</div>
 
@@ -160,32 +182,37 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-						<li><a href="index.html">Homepage</a></li>
+					<li><a href="home.html">Homepage</a></li>
+					<li>
+							<span class="opener">Компании</span>
+							<ul>
+								<li><a href="#">ООО ИжПЗ</a></li>
+								<li><a href="#">ООО ИжПЗ-Связь</a></li>
+								<li><a href="#">ООО ИжПЗ-Фотон</a></li>
+								<li><a href="#">ООО ИжПЗ-Телеком</a></li>
+								<li><a href="#">ООО ИжПЗ-Механика</a></li>
+								<li><a href="#">ООО ИжПЗ-Тестирование</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Заказ продукции</span>
+							<ul>
+								<li><a href="#">Заказ</a></li>
+								<li><a href="#">Состояние заказа</a></li>							
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Отработка заказа</span>
+							<ul>
+								<li><a href="#">Номенклатура</a></li>
+								<li><a href="#">Ценообразование</a></li>
+								<li><a href="#">Договор</a></li>
+								<li><a href="#">Отгрузка</a></li>
+							</ul>
+						</li>						
 						<li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
-						<li>
-							<span class="opener">Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Etiam Dolore</a></li>
-						<li><a href="#">Adipiscing</a></li>
-						<li>
-							<span class="opener">Another Submenu</span>
-							<ul>
-								<li><a href="#">Lorem Dolor</a></li>
-								<li><a href="#">Ipsum Adipiscing</a></li>
-								<li><a href="#">Tempus Magna</a></li>
-								<li><a href="#">Feugiat Veroeros</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Maximus Erat</a></li>
-						<li><a href="#">Sapien Mauris</a></li>
-						<li><a href="#">Amet Lacinia</a></li>
+						
 					</ul>
 				</nav>
 
