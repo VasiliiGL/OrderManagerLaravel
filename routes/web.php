@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',[IndexController::class, 'index'])->name('home');
+ //->middleware("r");
 Route::get('/about', function () {
     return view('about');
 });
