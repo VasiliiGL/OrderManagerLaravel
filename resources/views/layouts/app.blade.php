@@ -7,7 +7,7 @@
 		<title>@yield('title-block')</title>
 </head>
 <body class="is-preload">
-    @yield('content')
+   
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -15,10 +15,11 @@
 <!-- Main -->
 	<div id="main">
 		<div class="inner">
-
+		@yield('header')
 			<!-- Header -->
 			@include('partials.header')
 
+			@yield('content')
 			<!-- Banner -->
 				@include('partials.banner')
 
@@ -30,8 +31,11 @@
 	</div>
 
 <!-- Sidebar -->
+
 	<div id="sidebar">
+	@yield('sidebar')
 		<div class="inner">
+			
 
 			<!-- Search -->
 			@include('partials.search')
@@ -40,8 +44,8 @@
 			@include('partials.menu')
 
 			<!-- Section post-->
-			@include('partials.post')
-
+			@include('partials.post',["posts"=>$posts])
+	
 			<!-- Section contacts -->
 			@include('partials.contacts')
 

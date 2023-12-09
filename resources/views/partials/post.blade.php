@@ -2,8 +2,13 @@
 					<header class="major">
 						<h2>Новости</h2>
 					</header>
-					<div class="mini-posts">
-						<article>
+                    @foreach($posts as $post)
+				        @include("partials.posts.item",["post"=>$post])
+                    @endforeach
+				<!--	<div class="mini-posts">
+              
+                 
+					<article>
 							<a href="#" class="image"><img src="images/Микроэлектроника2023.png" alt="" /></a>
 							<p>С 9 по 14 октября ИжПЗ участвует в российском форуме «Микроэлектроника 2023» в г. Сочи</p>
 						</article>
@@ -15,7 +20,8 @@
 							<a href="#" class="image"><img src="images/Нефтегаз.jpg" alt="" /></a>
 							<p>Выставка «Нефтегаз» входит в десятку крупнейших нефтегазовых смотров мира. Проводится ежегодно вместе с Национальным нефтегазовым форумом — ключевым событием деловой программы. В этом году в мероприятии участвовали более 700 компаний из России, Китая, Южной Кореи, Турции, Индии, Италии, Казахстана и других стран.</p>
 						</article>
-					</div>
+                     
+					</div>-->
 					<ul class="actions">
 						<li><a href="#" class="button">More</a></li>
 					</ul>
