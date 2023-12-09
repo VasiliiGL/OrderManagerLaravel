@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title','Главная страница')
+@section('title','Hовости')
 
 @section('content')
 <!-- Wrapper -->
@@ -9,23 +9,14 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
-							<!-- Header -->
-						        @include('partials.header')
-
-							<!-- Banner -->
-                                @include('partials.banner')
-
-							<!-- Section major_directions -->
-                                @include('partials.major_directions')
-
-							<!-- Section major_company-->
-                                @include('partials.major_company')
-								
-
+                            <!-- Header -->
+                            @include('partials.header')
+                            @include('partials.postitem')          
 						</div>
+                        
 					</div>
-
+                   
+                    
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -35,9 +26,6 @@
 
 							<!-- Menu menu-->
                                 @include('partials.menu')
-
-							<!-- Section post -->
-								 @include('partials.post',["posts"=>$posts])
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

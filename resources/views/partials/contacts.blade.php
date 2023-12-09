@@ -8,7 +8,7 @@
 						<li class="icon solid fa-phone">(000) 000-0000</li>
 						<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
 						Nashville, TN 00000-0000</li>
-						<li class="icon solid fa-home">Горячая линия безопасности АО «ИжПЗ»<br />
+						<li class="icon solid fa-exclamation">Горячая линия безопасности АО «ИжПЗ»<br />
 						Электронная почта: doverie@izpz.ru</li>
 					</ul>
 				</section>

@@ -3,7 +3,7 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-					<li><a href="home.html">Homepage</a></li>
+					<li><a href="{{route('home')}}">Homepage</a></li>
 					<li>
 							<span class="opener">Наши Компании</span>
 							<ul>

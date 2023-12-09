@@ -3,8 +3,9 @@
 						<h2>Новости</h2>
 					</header>
                     @foreach($posts as $post)
-				        @include("partials.posts.item",["post"=>$post])
+				        @include("posts.partials.item",["post"=>$post])
                     @endforeach
+
 				<!--	<div class="mini-posts">
               
                  
