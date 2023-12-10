@@ -37,7 +37,7 @@
                                 @include('partials.menu')
 
 							<!-- Section post -->
-								 @include('partials.post',["posts"=>$posts])
+								 @include('partials.posthome',["posts"=>$posts])
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

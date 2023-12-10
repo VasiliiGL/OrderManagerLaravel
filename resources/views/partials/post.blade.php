@@ -24,6 +24,6 @@
                      
 					</div>-->
 					<ul class="actions">
-						<li><a href="#" class="button">More</a></li>
+						<li><a href="{{route('home')}}" class="button">Назад</a></li>
 					</ul>
 				</section>

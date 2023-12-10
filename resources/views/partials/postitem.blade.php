@@ -4,8 +4,11 @@
 					</header>
 					<div class="posts">
 						<article>
-							<a href="#" class="image"><img width="300" height="300" src="/storage/posts/{{$post->thumbnail}}" alt="" /></a>
+							<a href="#" class="image"><img width="500" height="500" src="/storage/posts/{{$post->thumbnail}}" alt="" /></a>
 							<p>{!! $post->description !!}</p>						
 						</article>						
 					</div>
+					<ul class="actions">
+						<li><a href="{{route('posts.index')}}" class="button">Назад</a></li>
+					</ul>
 				</section>

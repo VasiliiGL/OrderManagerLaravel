@@ -21,11 +21,7 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-                             @include('partials.search')
-
-							<!-- Menu menu-->
-                                @include('partials.menu')
+						
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')
