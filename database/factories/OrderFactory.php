@@ -17,7 +17,10 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "number"=>$this->faker->unique()->integer(),
+            "user_id"=>$this->faker->id(),
+            "task"=>$this->faker->text(),
+            "writing"=>$this->faker->image("public/storage/orders",640,520,null,false),
         ];
     }
 }

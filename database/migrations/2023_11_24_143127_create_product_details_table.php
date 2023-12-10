@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('product_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("product_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("technology_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("pricing_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("material_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("galvanic_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("paint_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
