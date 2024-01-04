@@ -9,14 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
-     // связь заказа с организацией - исполнителем
     public function up(): void
     {
-        Schema::create('order_organizations', function (Blueprint $table) {
+        Schema::create('order_customers', function (Blueprint $table) {
             $table->id();
             $table->foreignId("order_id")->unique()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId("organization_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("сustomer_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_organizations');
+        Schema::dropIfExists('order_customers');
     }
 };

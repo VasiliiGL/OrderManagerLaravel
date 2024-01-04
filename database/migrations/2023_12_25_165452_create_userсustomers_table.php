@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+     // Данные о работниках заказчика. Они могут быть не зарегестрированы в системе. и не приязаны таблице user
     public function up(): void
     {
         Schema::create('userсustomers', function (Blueprint $table) {

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('order_processings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("order_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("status_order_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("user_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->text("text");
+            $table->string('letter'); // письмо заказчика с визой директора
             $table->timestamps();
         });
     }

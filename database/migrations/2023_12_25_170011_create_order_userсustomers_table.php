@@ -9,10 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // связь работников заказчика с заказом. В одном заказе может быть несколько работников
     public function up(): void
     {
         Schema::create('order_userсustomers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("order_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate(); 
+            $table->foreignId("userсustomer_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();          
             $table->timestamps();
         });
     }

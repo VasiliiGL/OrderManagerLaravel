@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // подробности о работниках предприятия
     public function up(): void
     {
         Schema::create('user_details', function (Blueprint $table) {
@@ -17,9 +18,9 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('fathername');
             $table->string('lastname');
-            $table->string('jobtitle');
-            $table->string('workphone');
-            $table->string('personalphone');
+            $table->string('jobtitle'); // должность
+            $table->string('workphone'); // телефон
+            $table->string('personalphone'); // сотовый телефон
             $table->timestamps();
         });
     }
