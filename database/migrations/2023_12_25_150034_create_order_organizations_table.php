@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('order_organizations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("order_id")->unique()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId("organization_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('organization_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('order_id')->unique()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

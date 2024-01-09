@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // таблица заказов
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->date('data'); // дата создания входящего письма
             $table->text('description'); // описание заказа
             $table->string('desiredDate'); // сроки выполнения заказа
-            $table->string('letter'); // письмо заказчика
+            $table->string('letter')->nullable(); // письмо заказчика
             $table->timestamps();
         });
     }

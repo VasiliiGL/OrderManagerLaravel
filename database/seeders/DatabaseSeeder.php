@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\AdminUser;
+use App\Models\Order;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,8 @@ class DatabaseSeeder extends Seeder
          \App\Models\User::factory(10)->create();
 
          Post::factory(10)->create();
+
+         Order::factory(10)->create();
 
          AdminUser::factory(1)->create([
             "name"=>"Admin",

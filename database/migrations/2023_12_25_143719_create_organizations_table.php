@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    // Таблица организации-производителей
     public function up(): void
     {
         Schema::create('organizations', function (Blueprint $table) {

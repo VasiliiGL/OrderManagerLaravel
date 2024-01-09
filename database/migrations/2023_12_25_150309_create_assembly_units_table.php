@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('assembly_units', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("document_change_id")->unique()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('document_change_id')->unique()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

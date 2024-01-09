@@ -9,10 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //таблица входимости детелей в заказы
     public function up(): void
     {
         Schema::create('order_documentchanges', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('document_change_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
 
-     //состояние выполнения заказа
+     //состояние выполнения заказа, может иметь несколько стандартных состояний
     public function up(): void
     {
         Schema::create('status_orders', function (Blueprint $table) {

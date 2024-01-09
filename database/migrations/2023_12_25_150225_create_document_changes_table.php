@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('document_changes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("designdocument_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('designdocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('changenumber'); // номер изменения
             $table->string('notice'); // номер извещения
             $table->date('data'); // дата изменения/создания(выпуска) документа
