@@ -9,6 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //Отслеживание пути прохождения заказа
     public function up(): void
     {
         Schema::create('order_processings', function (Blueprint $table) {

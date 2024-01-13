@@ -15,8 +15,25 @@ class Order extends Model
         "description",
         "desiredDate",
         "letter"
-
     ];
+
+    public function users()
+    {
+        $this->belongsToMany(User::class);
+    }
+    public function organizations()
+    {
+        $this->belongsToMany(Organization::class);
+    }
+    public function customers()
+    {
+        $this->belongsToMany(Customer::class);
+    }
+    public function usercustomers()
+    {
+        $this->belongsToMany(UserСustomer::class);
+    }
+    
 }
 
 /* $table->string('number'); // номер письма от заказчика 

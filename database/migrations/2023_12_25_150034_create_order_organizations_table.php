@@ -10,7 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
 
-     // связь заказа с организацией - исполнителем
+     // связь заказа с организацией c заказами
     public function up(): void
     {
         Schema::create('order_organizations', function (Blueprint $table) {
