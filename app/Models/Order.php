@@ -33,6 +33,10 @@ class Order extends Model
     {
         $this->belongsToMany(UserСustomer::class);
     }
+   public function statuses()
+   {
+        $this->belongsToMany(Status::class);
+   }
     
 }
 

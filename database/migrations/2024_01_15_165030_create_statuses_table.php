@@ -9,13 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-
-     //состояние выполнения заказа, может иметь несколько стандартных состояний
     public function up(): void
     {
-        Schema::create('status_orders', function (Blueprint $table) {
+        Schema::create('statuses', function (Blueprint $table) {
             $table->id();
             $table->enum('status',['прием','резолюзия','отказ','номенклатура','нормирование','согласование','договор','исполнение','контроль','отгрузка']);
+            $table->timestamps();
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('status_orders');
+        Schema::dropIfExists('statuses');
     }
 };
