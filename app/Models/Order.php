@@ -23,11 +23,11 @@ class Order extends Model
     }
     public function organizations()
     {
-        $this->belongsToMany(Organization::class);
+        $this->belongsTo(Organization::class);
     }
     public function customers()
     {
-        $this->belongsToMany(Customer::class);
+        $this->belongsTo(Customer::class);
     }
     public function usercustomers()
     {

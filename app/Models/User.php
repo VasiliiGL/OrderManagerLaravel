@@ -58,6 +58,9 @@ class User extends Authenticatable
         return $this->belongsTo(Organization::class);
     }
 
-     
+     public function orderstatuses()
+     {
+        return $this->hasMany(OrderStatus::class);
+     }
 
 }
