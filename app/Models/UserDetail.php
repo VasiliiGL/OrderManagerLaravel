@@ -9,6 +9,8 @@ class UserDetail extends Model
 {
     use HasFactory;
     protected $fillable = [
+         "user_id",
+         "organization_id",
         "firstname",
         "fathername",
         "lastname",
@@ -20,5 +22,9 @@ class UserDetail extends Model
      public function user()
      {
         return $this->belongsTo(User::class);
+     }
+     public function organization()
+     {
+        return $this->belongsTo(Organization::class);
      }
 }

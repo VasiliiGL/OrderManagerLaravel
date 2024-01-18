@@ -20,10 +20,13 @@ class Organization extends Model
     {
         return $this->hasMany(Order::class);
     }
-    public function users()
+ 
+    public function userdatails()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(UserDetail::class);
     }
+
+
 }
 /*$table->id();
 $table->string('title')->unique(); //  Название организации

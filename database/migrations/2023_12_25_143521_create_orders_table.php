@@ -14,6 +14,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('organization_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('number'); // номер письма от заказчика 
             $table->date('data'); // дата создания входящего письма
             $table->text('description'); // описание заказа

@@ -10,6 +10,7 @@ class UserСustomer extends Model
     use HasFactory;
     
     protected $fillable = [
+        "customer_id",
         "firstname",
         "fathername",
         "lastname",
@@ -17,11 +18,6 @@ class UserСustomer extends Model
         "workphone",
         "personalphone"
      ];
-     public function orders()
-     {
-         return $this->belongsToMany(Order::class);
-     }
-
      public function customer()
      {
         return $this->belongsTo(Customer::class);

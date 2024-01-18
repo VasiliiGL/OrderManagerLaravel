@@ -10,6 +10,8 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
+        "customer_id",
+        "organization_id",
         "number",
         "data",
         "description",
@@ -17,18 +19,17 @@ class Order extends Model
         "letter"
     ];
 
-    public function users()
-    {
-        $this->belongsToMany(User::class);
-    }
-    public function organizations()
+    public function organization()
     {
         $this->belongsTo(Organization::class);
     }
-    public function customers()
+    public function customer()
     {
         $this->belongsTo(Customer::class);
     }
+
+
+
     public function usercustomers()
     {
         $this->belongsToMany(UserСustomer::class);
@@ -40,9 +41,12 @@ class Order extends Model
     
 }
 
-/* $table->string('number'); // номер письма от заказчика 
-            $table->date('data'); // дата создания входящего письма
-            $table->text('description'); // описание заказа
-            $table->string('desiredDate'); // сроки выполнения заказа
-            $table->string('letter'); // письмо заказчика
-            $table->timestamps();*/
+/*$table->id();
+$table->foreignId('customer_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+$table->foreignId('organization_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+$table->string('number'); // номер письма от заказчика 
+$table->date('data'); // дата создания входящего письма
+$table->text('description'); // описание заказа
+$table->string('desiredDate'); // сроки выполнения заказа
+$table->string('letter')->nullable(); // письмо заказчика
+$table->timestamps();*/
