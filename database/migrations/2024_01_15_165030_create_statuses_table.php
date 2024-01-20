@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
             $table->enum('status',['прием','резолюзия','отказ','номенклатура','нормирование','согласование','договор','исполнение','контроль','отгрузка']);
-            $table->timestamps();
+            $table->boolean('current');
+            $table->timestamps('');
         });
     }
 

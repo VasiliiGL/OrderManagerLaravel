@@ -9,13 +9,13 @@ class Status extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "status"
+        "status",
+        "current"
     ];
 
     public function orders()
     {
          $this->belongsToMany(Order::class);
     }
-
 
 }

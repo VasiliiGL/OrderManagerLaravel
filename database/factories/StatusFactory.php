@@ -18,7 +18,8 @@ class StatusFactory extends Factory
     public function definition(): array
     {
         return [
-           'type'=>$this->faker->randomElement('прием','резолюзия','отказ','номенклатура','нормирование','согласование','договор','исполнение','контроль','отгрузка')
+           'type'=>$this->faker->randomElement('прием','резолюзия','отказ','номенклатура','нормирование','согласование','договор','исполнение','контроль','отгрузка'),
+            'current'=>'false'
         ];
     }
 }
