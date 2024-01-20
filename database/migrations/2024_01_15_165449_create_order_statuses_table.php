@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("order_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId("status_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId("user_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('comment')->nullable();; // комментарий исполнителя
             $table->string('document')->nullable();; // письмо заказчика с визой директора, номенклатура, калькуляция.
             $table->timestamps();

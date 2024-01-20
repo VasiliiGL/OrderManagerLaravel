@@ -35,15 +35,11 @@ class Order extends Model
     {
         return $this->belongsToMany(UserСustomer::class);
     }
+    public function statuses()
+    {
+        return $this->belongsToMany(Status::class);
+    }
 
-
-
-
-   public function statuses()
-   {
-        $this->belongsToMany(Status::class);
-   }
-    
 }
 
 /*$table->id();

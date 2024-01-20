@@ -52,13 +52,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Order::class);
     }
-
-
-
-
-
-
-
      public function orderstatuses()
      {
         return $this->hasMany(OrderStatus::class);
