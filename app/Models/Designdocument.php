@@ -13,6 +13,11 @@ class Designdocument extends Model
         "name",
         "type"
     ];
+
+    public function changedocuments()
+    {
+       return $this->hasMany(Changedocument::class)->orderBy("created_at");
+    }
 }
 
 /*Schema::create('designdocuments', function (Blueprint $table) {
