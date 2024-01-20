@@ -17,7 +17,10 @@ class DesigndocumentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+
+                "designation" => $this->faker->unique()->bothify('ТБ # ### ###'),
+                'name'=>$this->faker->randomElement('Корпус','Основание','Рамка','Болт','Втулка'),
+                "type"=> 'чертеж'
         ];
     }
 }
