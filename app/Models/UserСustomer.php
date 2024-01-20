@@ -22,6 +22,12 @@ class UserСustomer extends Model
      {
         return $this->belongsTo(Customer::class);
      }
+
+     public function orders()
+     {
+        return $this-> belongsToMany(Order::class);
+     }
+
 }
 
 /*Schema::create('userсustomers', function (Blueprint $table) {

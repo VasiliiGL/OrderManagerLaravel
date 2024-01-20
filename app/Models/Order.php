@@ -27,13 +27,18 @@ class Order extends Model
     {
         $this->belongsTo(Customer::class);
     }
-
-
-
+    public function users()
+    {
+        return $this->belongsToMany(Order::class);
+    }
     public function usercustomers()
     {
-        $this->belongsToMany(UserСustomer::class);
+        return $this->belongsToMany(UserСustomer::class);
     }
+
+
+
+
    public function statuses()
    {
         $this->belongsToMany(Status::class);
