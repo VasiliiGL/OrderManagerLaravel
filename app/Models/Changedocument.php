@@ -35,6 +35,11 @@ class Changedocument extends Model
         return $this->belongsToMany(Changedocument::class);
     }
 
+    public function Assemblyunits()
+    {
+        return $this->belongsToMany(Assemblyunit::class);
+    }
+
 
 }
 

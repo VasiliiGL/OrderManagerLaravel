@@ -16,6 +16,10 @@ class Assemblyunit extends Model
     {
         return $this->belongsTo(Changedocument::class);
     }
+    public function changedocuments()
+    {
+        return $this->belongsToMany(Changedocument::class);
+    }
 }
 
 /* Schema::create('assemblyunits', function (Blueprint $table) {
