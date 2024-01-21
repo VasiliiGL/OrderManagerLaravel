@@ -25,6 +25,16 @@ class Changedocument extends Model
         $this->belongsTo(Notice::class);
     }
 
+    public function assemblyunit()
+    {
+        return $this->hasOne(Assemblyunit::class)->withDefault();;
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Changedocument::class);
+    }
+
 
 }
 
