@@ -39,6 +39,10 @@ class Order extends Model
     {
         return $this->belongsToMany(Status::class);
     }
+    public function changedocuments()
+    {
+        return $this->belongsToMany(Changedocument::class);
+    }
 
 }
 
