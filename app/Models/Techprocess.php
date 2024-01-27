@@ -12,6 +12,7 @@ class Techprocess extends Model
         "changedocument_id",
         "type",
         "description",
+        "cost",
         "document"
     ];
   
@@ -26,5 +27,6 @@ class Techprocess extends Model
             $table->foreignId('changedocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('type'); 
             $table->text('description'); // описание ТП
+             $table->float('cost'); // ориентировочная трудоемкость
             $table->timestamps();
         });*/

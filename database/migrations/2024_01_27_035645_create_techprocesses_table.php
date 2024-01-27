@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('changedocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('type'); 
             $table->text('description'); // описание ТП
+            $table->float('cost'); // ориентировочная трудоемкость
             $table->text('document'); // ссылка на документ ТП
             $table->timestamps();
         });
