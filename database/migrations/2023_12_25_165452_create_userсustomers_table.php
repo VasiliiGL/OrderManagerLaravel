@@ -13,7 +13,7 @@ return new class extends Migration
      // Данные о работниках заказчика. Они могут быть не зарегестрированы в системе. и не приязаны таблице user
     public function up(): void
     {
-        Schema::create('userсustomers', function (Blueprint $table) {
+        Schema::create('usercustomers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('firstname');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('userсustomers');
+        Schema::dropIfExists('usercustomers');
     }
 };

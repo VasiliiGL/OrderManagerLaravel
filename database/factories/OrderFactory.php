@@ -18,11 +18,11 @@ class OrderFactory extends Factory
     {
         return [
            //"number" => $this->faker->unique()->numberBetween(1,1000)
-           "number" => $this->faker->unique()->bothify('АОК ####'),
-           "data" =>  $this->faker->dateTime(),
-           "description"=> $this->faker->text(50),
-           "desiredDate"=>$this->faker->bothify('# недели'),
-           "letter"=>$this->faker->image("letters")
+           'number' => $this->faker->unique()->bothify('АОК ####'),
+           'data' =>  $this->faker->dateTime(),
+           'description'=> $this->faker->text(50),
+           'desiredDate'=>$this->faker->bothify('# недели'),
+           'letter'=>$this->faker->image("letters"),
         ];
     }
 }

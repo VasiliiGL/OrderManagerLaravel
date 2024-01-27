@@ -19,7 +19,7 @@ class StatusFactory extends Factory
     {
         return [
            'type'=>$this->faker->randomElement('прием','резолюзия','отказ','номенклатура','нормирование','согласование','договор','исполнение','контроль','отгрузка'),
-            'current'=>'false'
+            'current'=>'false',
         ];
     }
 }

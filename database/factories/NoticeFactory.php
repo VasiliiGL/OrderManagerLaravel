@@ -17,7 +17,19 @@ class NoticeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'designation' => $this->faker->unique()->bothify('ТБ/####'),
+            'data' =>  $this->faker->dateTime(),
+            'description'=> $this->faker->text(50),
+            "thumbnail"=>$this->faker->image("notices"),
         ];
     }
 }
+
+/*   Schema::create('notices', function (Blueprint $table) {
+            $table->id();
+            $table->string('designation'); //обозначение
+            $table->date('data'); //дата выпуска извещения
+            $table->text('description');
+            $table->string('documentfile'); //ссылка на документ - извещение
+            $table->timestamps();
+        });*/

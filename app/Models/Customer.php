@@ -22,7 +22,7 @@ class Customer extends Model
     }
     public function usercustomers()
     {
-        return $this->hasMany(UserСustomer::class);
+        return $this->hasMany(UserCustomer::class);
     }
 
 }

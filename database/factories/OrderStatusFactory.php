@@ -18,7 +18,7 @@ class OrderStatusFactory extends Factory
     {
         return [
             'order_id'=>$this->faker->numberBetween(1,5),
-            'status_id'=>$this->faker->numberBetween(1,10)
+            'status_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

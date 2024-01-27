@@ -33,7 +33,7 @@ class Order extends Model
     }
     public function usercustomers()
     {
-        return $this->belongsToMany(UserСustomer::class);
+        return $this->belongsToMany(UserCustomer::class);
     }
     public function statuses()
     {

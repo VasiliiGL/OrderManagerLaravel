@@ -12,10 +12,10 @@ return new class extends Migration
     // связь работников заказчика с заказом. В одном заказе может быть несколько работников
     public function up(): void
     {
-        Schema::create('order_userсustomers', function (Blueprint $table) {
+        Schema::create('order_usercustomers', function (Blueprint $table) {
             $table->id();
             $table->foreignId("order_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate(); 
-            $table->foreignId("userсustomer_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();          
+            $table->foreignId("usercustomer_id")->constrained()->cascadeOnDelete()->cascadeOnUpdate();          
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_userсustomers');
+        Schema::dropIfExists('order_usercustomers');
     }
 };
