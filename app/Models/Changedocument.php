@@ -35,9 +35,14 @@ class Changedocument extends Model
         return $this->belongsToMany(Changedocument::class);
     }
 
-    public function Assemblyunits()
+    public function assemblyunits()
     {
         return $this->belongsToMany(Assemblyunit::class);
+    }
+
+    public function techprocesses()
+    {
+        return $this->hasMany(Techprocess::class);
     }
 
 
