@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('type'); 
             $table->text('description'); // описание ТП
             $table->float('cost'); // ориентировочная трудоемкость
-            $table->text('document'); // ссылка на документ ТП
+            $table->text('document')->nullable();; // ссылка на документ ТП
             $table->timestamps();
         });
     }

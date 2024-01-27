@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('designation'); //обозначение
             $table->date('data'); //дата выпуска извещения
             $table->text('description');
-            $table->string('documentfile'); //ссылка на документ - извещение
+            $table->string('documentfile')->nullable();; //ссылка на документ - извещение
             $table->timestamps();
         });
     }

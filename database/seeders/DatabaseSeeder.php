@@ -25,13 +25,13 @@ class DatabaseSeeder extends Seeder
 
          Post::factory(10)->create();
 
-         Order::factory(10)->create();
+         //Order::factory(10)->create();
 
          Designdocument::factory(10)->create();
 
          Notice::factory(5)->create();
 
-         Status::factory(10)->create();
+         //Status::factory(10)->create();
 
 
          AdminUser::factory(1)->create([

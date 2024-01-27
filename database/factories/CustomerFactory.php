@@ -19,10 +19,10 @@ class CustomerFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' =>$this-> faker()->name()->unique()->bothify('OOO #######'),
-            'address' =>$this->faker()->address(),
-            'email' => $this-> faker()->unique()->safeEmail(),
-            'phone' =>$this->faker()->phoneNumber(),
+            'title' =>$this->faker->unique()->bothify('OOO #######'),
+            'address' =>$this->faker->address(),
+            'email' => $this-> faker->unique()->safeEmail(),
+            'phone' =>$this->faker->phoneNumber(),
             'description'=> $this->faker->text(50),
             'password' => static::$password ??= Hash::make('password'),
 

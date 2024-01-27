@@ -20,7 +20,7 @@ class NoticeFactory extends Factory
             'designation' => $this->faker->unique()->bothify('ТБ/####'),
             'data' =>  $this->faker->dateTime(),
             'description'=> $this->faker->text(50),
-            "thumbnail"=>$this->faker->image("notices"),
+            "documentfile"=>$this->faker->image("storage/app/public/notices",640,520,null,false),
         ];
     }
 }

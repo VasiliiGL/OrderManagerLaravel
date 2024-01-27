@@ -19,7 +19,8 @@ class DesigndocumentFactory extends Factory
         return [
 
                 'designation' => $this->faker->unique()->bothify('ТБ # ### ###'),
-                'name'=>$this->faker->randomElement('Корпус','Основание','Рамка','Болт','Втулка'),
+                //'name'=>$this->faker->randomElement('Корпус','Основание','Рамка','Болт','Втулка'),
+                'name'=>('Корпус'),
                 "type"=> 'чертеж',
         ];
     }

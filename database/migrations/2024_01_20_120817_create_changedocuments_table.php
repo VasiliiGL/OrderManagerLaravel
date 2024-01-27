@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('designdocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('notice_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('number'); //порядковый номер изменения, встречаются символы и буквы
-            $table->string('documentfile'); //ссылка на документ - чертеж
+            $table->string('documentfile')->nullable();; //ссылка на документ - чертеж
             $table->timestamps();
         });
     }

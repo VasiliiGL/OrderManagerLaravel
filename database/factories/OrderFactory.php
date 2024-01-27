@@ -18,18 +18,25 @@ class OrderFactory extends Factory
     {
         return [
            //"number" => $this->faker->unique()->numberBetween(1,1000)
+           'customer_id'=>(1),
+           'organization_id'=>(1),
            'number' => $this->faker->unique()->bothify('АОК ####'),
            'data' =>  $this->faker->dateTime(),
            'description'=> $this->faker->text(50),
            'desiredDate'=>$this->faker->bothify('# недели'),
-           'letter'=>$this->faker->image("letters"),
+           'letter'=>$this->faker->image("storage/app/public/letters",640,520,null,false),
         ];
     }
 }
 
-/* $table->string('number'); // номер письма от заказчика 
+/*     Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('customer_id') ->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('organization_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('number'); // номер письма от заказчика 
             $table->date('data'); // дата создания входящего письма
             $table->text('description'); // описание заказа
             $table->string('desiredDate'); // сроки выполнения заказа
-            $table->string('letter'); // письмо заказчика
-            $table->timestamps();*/
+            $table->string('letter')->nullable(); // письмо заказчика
+            $table->timestamps();
+        });*/
