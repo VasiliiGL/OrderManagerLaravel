@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title','Новости')
+@section('title','Заказы')
 
 @section('content')
 <!-- Wrapper -->
@@ -11,8 +11,10 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                            @include('partials.post',["posts"=>$posts])	 
-                           <div > {{$posts->links()}}  </div>                    
+                            @foreach($orders as $order)
+				                @include("orders.partials.itemorder",["order"=>$order])
+                            @endforeach
+                           <div > {{$orders->links()}}  </div>                    
 						</div>
                         
 					</div>
@@ -38,4 +40,3 @@
 
 			</div>
 @endsection
-	
