@@ -7,7 +7,7 @@
 					<li>
 							<span class="opener">Наши Компании</span>
 							<ul>
-								<li><a href="#">ООО ИжПЗ</a></li>
+								<li><a href="{{route('organizations.index')}}">ООО ИжПЗ</a></li>
 								<li><a href="#">ООО ИжПЗ-Связь</a></li>
 								<li><a href="#">ООО ИжПЗ-Фотон</a></li>
 								<li><a href="#">ООО ИжПЗ-Телеком</a></li>
@@ -25,7 +25,7 @@
 						<li>
 							<span class="opener">Этапы выполнения заказа</span>
 							<ul>
-								<li><a href="#">Заказы</a></li>
+								<li><a href="{{route('orders.index')}}">Заказы</a></li>
 								<li><a href="#">Номенклатура</a></li>
 								<li><a href="#">Ценообразование</a></li>
 								<li><a href="#">Договор</a></li>
