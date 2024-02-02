@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title','Заказы')
+@section('title',$order->number)
 
 @section('content')
 <!-- Wrapper -->
@@ -11,10 +11,7 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                            @foreach($orders as $order)
-				                @include("orders.partials.itemorder",["order"=>$order, "organization"=>$organization])
-                            @endforeach
-                           <div > {{$orders->links()}}  </div>                    
+                            @include('orders.partials.order')          
 						</div>
                         
 					</div>
@@ -24,11 +21,7 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-                             @include('partials.search')
-
-							<!-- Menu menu-->
-                                @include('partials.menu')
+						
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

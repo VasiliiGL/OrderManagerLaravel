@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title','Hовости')
+@section('title','Новости')
 
 @section('content')
 <!-- Wrapper -->

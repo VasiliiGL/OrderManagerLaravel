@@ -8,7 +8,7 @@
 							<h3>ООО ИжПЗ</h3>
 							<p>Бортовые и наземные радиотехнические комплексы, телеметрические системы, системы визуального контроля, системы связи, робототехника.</p>
 							<ul class="actions">
-								<li><a href="#" class="button">Подробнее</a></li>
+								<li><a href="{{route('organizations.index')}}" class="button">Подробнее</a></li>
 							</ul>
 						</article>
 						<article>

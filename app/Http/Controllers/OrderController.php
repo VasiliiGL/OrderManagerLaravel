@@ -3,16 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Organization;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
    public function index()
    {
-    $orders = Order::orderBy("created_at","DESC")->paginate(3);
-    return view('orders.index',[
-        "orders"=>$orders,
-    ]);
+$x=1;
+   //$orders = Order::orderBy("created_at","DESC")->paginate(3);
 
+   $orders = Order::where ('organization_id',$x)->orderBy('number','asc')->paginate(3);
+   $organization= Organization::find ($x);
+   //dd( $organization);
+    return view('orders.index',[
+        "orders"=>$orders, "organization"=>$organization
+    ]);
+   }
+
+   public function show($id)
+   {
+    $order = Order::findOrFail($id);
+    return view('orders.show',[
+        "order" =>$order, 
+    ]);
    }
 }
