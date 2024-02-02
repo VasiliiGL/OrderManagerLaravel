@@ -25,7 +25,7 @@
                     <p class="text-red-500">{{$message}}</p>
                 @enderror
 
-            <input name="jorganization"  type="text" placeholder="Организация" />
+            <input name="organization"  type="text" placeholder="Организация" />
                 @error('organization')
                     <p class="text-red-500">{{$message}}</p>
                 @enderror    

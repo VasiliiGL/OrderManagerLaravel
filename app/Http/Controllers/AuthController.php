@@ -44,11 +44,12 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $data=$request->validate([
-            "name"=>'required|string|min:4|max:30',
+            "name"=>'required|numeric|min:170000|max:170999|unique:users,name',
             "lastname"=>'required|string|min:4|max:30',
             "fathername"=>'required|string|min:4|max:30',
             "firstname"=>'required|string|min:4|max:30',
             "jobtitle"=>'required|string|min:4|max:30',
+            "organization"=>'required|string|min:4|max:30',
             "workphone"=>'required|numeric',
             "personalphone"=>'required|numeric',
             'email'=>'required|min:4|max:100|email|string|unique:users,email',
@@ -62,10 +63,15 @@ class AuthController extends Controller
         ]);
 
         $userdetails = UserDetail::create([
-            'user_id'->$user["id"],
-            'lastname'->$data[ "lastname"],
-            'fathername'->$data["fathername"],
-            'firstname'->$data["firstname"]
+            'user_id'=>$user["id"],
+            'organization_id'=> '1',
+            'lastname'=>$data[ "lastname"],
+            'fathername'=>$data["fathername"],
+            'firstname'=>$data["firstname"],
+            "jobtitle"=>$data["jobtitle"],
+            "workphone"=>$data["workphone"],
+            "personalphone"=>$data["personalphone"]
+
         ]);
 
         if($user){
