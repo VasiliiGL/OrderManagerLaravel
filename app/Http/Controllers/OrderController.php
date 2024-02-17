@@ -21,11 +21,27 @@ $x=1;
     ]);
    }
 
+   public function ordersAll()
+   {
+    $orders = Order::orderBy("created_at","DESC")->paginate(3);
+
+    return view('orders.ordersAll',[
+        "orders"=>$orders, 
+    ]);
+   }
+
    public function show($id)
    {
     $order = Order::findOrFail($id);
     return view('orders.show',[
         "order" =>$order, 
     ]);
+   }
+
+
+
+   public function selectorganization()
+   {
+
    }
 }

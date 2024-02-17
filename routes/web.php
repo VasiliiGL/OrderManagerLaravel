@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrderController;
@@ -28,6 +29,7 @@ Route::get('/store',[EditorController::class, 'store'])->name('store');
 
 // Страница со списком всех заказов
 Route::get('/orders',[OrderController::class, 'index'])->name('orders.index');
+Route::get('/ordersAll',[OrderController::class, 'ordersAll'])->name('ordersAll');
 // По детальная карточка  заказа
 Route::get('/orders/{id}',[OrderController::class, 'show'])->name('orders.show');
 
@@ -36,6 +38,7 @@ Route::get('/organizations/{id}',[OrganizationController::class, 'show'])->name(
 
 Route::middleware("auth")->group(function(){
     Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
+    
 });
 
 Route::middleware("guest")->group(function(){
@@ -43,8 +46,10 @@ Route::middleware("guest")->group(function(){
     Route::post('/login_process',[AuthController::class, 'login'])->name('login_process');
     Route::get('/register',[AuthController::class, 'showRegisterform'])->name('register');
     Route::post('/register_process',[AuthController::class, 'register'])->name('register_process');
+    Route::get('/customer',[CustomerController::class, 'showLoginform'])->name('customer.login');
+    Route::get('/customerregister',[CustomerController::class, 'showRegisterform'])->name('customer.register');
+    Route::post('/customerlogin_process',[CustomerController::class, 'login'])->name('customer.login_process');
+    Route::post('/customerregister_process',[AuthController::class, 'register'])->name('customer.register_process');
+    Route::get('/customerlogout',[AuthController::class, 'logout'])->name('customer.logout');
 });
-
-
-
 

@@ -18,14 +18,14 @@
 						<li>
 							<span class="opener">Заказ продукции</span>
 							<ul>
-								<li><a href="#">Заказ</a></li>
+								<li><a href="{{route('customer.login')}}">Заказ</a></li>
 								<li><a href="#">Состояние заказа</a></li>							
 							</ul>
 						</li>
 						<li>
 							<span class="opener">Этапы выполнения заказа</span>
 							<ul>
-								<li><a href="{{route('orders.index')}}">Заказы</a></li>
+								<li><a href="{{route('ordersAll')}}">Заказы</a></li>
 								<li><a href="#">Номенклатура</a></li>
 								<li><a href="#">Ценообразование</a></li>
 								<li><a href="#">Договор</a></li>
