@@ -35,22 +35,21 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
-        });
 
-        $this->routes(function () { 
-              Route::middleware('admin')
+                
+            Route::middleware('admin')
                 -> prefix('admin')
+                -> name('admin.')
                 ->group(base_path('routes/admin.php'));
-          });
-          $this->routes(function () { 
+              
             Route::middleware('customer')
-              -> prefix('customer')
-              ->group(base_path('routes/customer.php'));
-        });
-        $this->routes(function () { 
+                -> prefix('customer')
+                -> name('customer.')
+                ->group(base_path('routes/customer.php'));
+              
             Route::middleware('user')
-              -> prefix('user')
-              ->group(base_path('routes/user.php'));
+                -> prefix('user')
+                ->group(base_path('routes/user.php'));
         });
     }
 }

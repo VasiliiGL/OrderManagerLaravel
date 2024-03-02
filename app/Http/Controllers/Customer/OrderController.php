@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Models\Customer;
 
 class OrderController extends Controller
 {
@@ -12,7 +14,32 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+      //dd($request);
+        $x=1;
+        //dd( $x);
+        //$orders = Order::orderBy("created_at","DESC")->paginate(3);
+   
+        $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(3);
+        $customer= Customer::find ($x);
+ 
+         return view('customer.orders.index',[
+             "orders"=>$orders, "customer"=>$customer
+         ]);
+    }
+
+    public function showAll(string $id)
+    {
+      //dd($id);
+      //  $x=1;
+        //dd( $x);
+        //$orders = Order::orderBy("created_at","DESC")->paginate(3);
+   
+        $orders = Order::where ('customer_id',$id)->orderBy('number','asc')->paginate(3);
+        $customer= Customer::find ($id);
+ 
+         return view('customer.orders.index',[
+             "orders"=>$orders, "customer"=>$customer
+         ]);
     }
 
     /**
@@ -36,8 +63,18 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
+        dd($id);
+          $x=1;
+          //dd( $x);
+          //$orders = Order::orderBy("created_at","DESC")->paginate(3);
+     
+          $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(3);
+          $customer= Customer::find ($x);
+   
+           return view('customer.orders.index',[
+               "orders"=>$orders, "customer"=>$customer
+           ]);
+      }
 
     /**
      * Show the form for editing the specified resource.

@@ -2,6 +2,6 @@
 						<h2>{{$post->title}}</h2>
 						
 						<a href="{{route('posts.show',$post->id)}}" 
-						class="image"><img src="storage/posts/{{$post->thumbnail}}" width="200" height="200"alt="" /></a>
+						class="image"><img src="storage/posts/{{$post->thumbnail}}" width="100" height="100"alt="" /></a>
 						<p>{!! $post->preview !!}</p>
 				</div>

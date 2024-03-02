@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title', 'Авторизация')
+@section('title', 'Авторизация для администратора')
 
 @section('content')
 <!-- Wrapper -->
@@ -11,7 +11,7 @@
         <div class="inner">
             <!-- Header -->
             @include('partials.header')
-            @include('partials.login')
+            @include('admin.auth.partials.login')
                           
         </div>
         
