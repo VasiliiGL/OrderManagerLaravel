@@ -9,3 +9,5 @@ Route::resource('orders', OrderController::class);
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login_process', [AuthController::class, 'login'])->name('login_process');
 Route::get('customer/orders/showAll/{id}',[OrderController::class, 'showAll'])-> name('orders.showAll');
+//Route::get('customer/orders/organization/{id}',[OrderController::class, 'organization'])-> name('orders.organization');
+Route::get('customer/orders/showorder/{id}',[OrderController::class, 'show'])-> name('orders.show');
