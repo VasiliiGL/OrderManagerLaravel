@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Customer;
+use App\Models\Organization;
 
 class OrderController extends Controller
 {
@@ -21,9 +22,10 @@ class OrderController extends Controller
    
         $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(3);
         $customer= Customer::find ($x);
+  
  
          return view('customer.orders.index',[
-             "orders"=>$orders, "customer"=>$customer
+             "orders"=>$orders, "customer"=>$customer, 
          ]);
     }
 
@@ -33,12 +35,12 @@ class OrderController extends Controller
       //  $x=1;
         //dd( $x);
         //$orders = Order::orderBy("created_at","DESC")->paginate(3);
-   
+
         $orders = Order::where ('customer_id',$id)->orderBy('number','asc')->paginate(3);
         $customer= Customer::find ($id);
- 
+
          return view('customer.orders.index',[
-             "orders"=>$orders, "customer"=>$customer
+             "orders"=>$orders, "customer"=>$customer,
          ]);
     }
 
@@ -61,7 +63,23 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
+    {
+        $order = Order::findOrFail($id);
+        /*$post = Post::where(["id"=>$id])->first();
+        if($post)
+        {
+            abort(404);
+        }*/
+       
+        return view('orders.show',[
+            "order"=>$order,
+        ]);
+    }
+
+
+
+  /*  public function show(string $id)
     {
         dd($id);
           $x=1;
@@ -74,7 +92,7 @@ class OrderController extends Controller
            return view('customer.orders.index',[
                "orders"=>$orders, "customer"=>$customer
            ]);
-      }
+      }*/
 
     /**
      * Show the form for editing the specified resource.
