@@ -8,6 +8,6 @@
 						</article>						
 					</div>
 					<ul class="actions">
-						<li><a href="{{route('orders.index')}}" class="button">Назад</a></li>
+						<li><a href="#" class="button">Назад</a></li>
 					</ul>
 				</section>
