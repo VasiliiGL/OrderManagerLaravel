@@ -7,9 +7,9 @@
 					<li>
 							<span class="opener">Наши Компании</span>
 							<ul>
-								<li><a href="{{route('organizations.index')}}">ООО ИжПЗ</a></li>
+								<li><a href="{{route('organizations.index'    )}}">ООО ИжПЗ</a></li>
 								<li><a href="{{route('organizations.show', '1')}}">ООО ИжПЗ-Механика</a></li>
-								<li><a href="{{route('organizations.show','2')}}">ООО ИжПЗ-Связь</a></li>
+								<li><a href="{{route('organizations.show', '2')}}">ООО ИжПЗ-Связь</a></li>
 								<li><a href="{{route('organizations.show', '3')}}">ООО ИжПЗ-Фотон</a></li>
 								<li><a href="{{route('organizations.show', '4')}}">ООО ИжПЗ-Телеком</a></li>
 								<li><a href="{{route('organizations.show', '5')}}">ООО ИжПЗ-Тестирование</a></li>
