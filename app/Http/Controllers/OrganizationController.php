@@ -9,7 +9,7 @@ class OrganizationController extends Controller
 {
     public function index()
    {
-    $organizations = Organization::orderBy("created_at","DESC")->paginate(3);
+    $organizations = Organization::orderBy("created_at","DESC")->paginate(5);
     return view('organizations.index',[
         "organizations"=>$organizations,
     ]);

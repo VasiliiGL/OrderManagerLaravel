@@ -1,9 +1,9 @@
 <nav id="menu">
 					<header class="major">
-						<h2>Menu</h2>
+						<h2>МЕНЮ</h2>
 					</header>
 					<ul>
-					<li><a href="{{route('home')}}">Homepage</a></li>
+					<li><a href="{{route('home')}}">Главная страница</a></li>
 					<li>
 							<span class="opener">Наши Компании</span>
 							<ul>
