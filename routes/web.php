@@ -33,8 +33,9 @@ Route::get('/ordersAll',[OrderController::class, 'ordersAll'])->name('ordersAll'
 // По детальная карточка  заказа
 Route::get('/orders/{id}',[OrderController::class, 'show'])->name('orders.show');
 
-Route::get('/organizations',[OrganizationController::class, 'index'])->name('organizations.index');
-Route::get('/organizations/{id}',[OrganizationController::class, 'show'])->name('organizations.show');
+Route::get('/organizationsAll',[OrganizationController::class, 'index'])->name('organizations.index');
+Route::get('/organizations/{id}',[OrganizationController::class, 'organization'])->name('organizations.show');
+Route::get('/orgConnection',[OrganizationController::class, 'orgConnection'])->name('organizations.orgConnection');
 
 Route::middleware("auth")->group(function(){
     Route::get('/logout',[AuthController::class, 'logout'])->name('logout');

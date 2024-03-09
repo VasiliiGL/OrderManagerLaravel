@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('title','Наши предприятия')
+@section('title',$organization->title)
 
 @section('content')
 <!-- Wrapper -->
@@ -11,16 +11,7 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                       
-				               <p>ntdt</p>
-							   @foreach($organizations as $organization)
-				                @include("organizations.partials.organization",["organization"=>$organization])
-                            @endforeach
-							<ul class="actions">
-						<li><a href="{{route('home')}}" class="button">Назад</a></li>
-					</ul>
-            
-               
+                            @include("organizations.partials.itemorganization",["organization"=>$organization])          
 						</div>
                         
 					</div>
@@ -30,11 +21,7 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
-                             @include('partials.search')
-
-							<!-- Menu menu-->
-                                @include('partials.menu')
+						
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

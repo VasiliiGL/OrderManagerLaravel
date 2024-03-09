@@ -11,7 +11,10 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                            @include('organizations.partials.organization')          
+                            @include('organizations.partials.organization')  
+							<ul class="actions">
+								<li><a href="{{route('home')}}" class="button">Назад</a></li>
+							</ul>        
 						</div>
                         
 					</div>

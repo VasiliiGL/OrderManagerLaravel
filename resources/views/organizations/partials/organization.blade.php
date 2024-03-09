@@ -7,7 +7,5 @@
 							<p>{!! $organization->description !!}</p>						
 						</article>						
 					</div>
-					<ul class="actions">
-						<li><a href="{{route('organizations.index')}}" class="button">Назад</a></li>
-					</ul>
+					
 				</section>

@@ -8,13 +8,14 @@
 							<span class="opener">Наши Компании</span>
 							<ul>
 								<li><a href="{{route('organizations.index')}}">ООО ИжПЗ</a></li>
-								<li><a href="#">ООО ИжПЗ-Связь</a></li>
-								<li><a href="#">ООО ИжПЗ-Фотон</a></li>
-								<li><a href="#">ООО ИжПЗ-Телеком</a></li>
-								<li><a href="#">ООО ИжПЗ-Механика</a></li>
-								<li><a href="#">ООО ИжПЗ-Тестирование</a></li>
+								<li><a href="{{route('organizations.show', '1')}}">ООО ИжПЗ-Механика</a></li>
+								<li><a href="{{route('organizations.show','2')}}">ООО ИжПЗ-Связь</a></li>
+								<li><a href="{{route('organizations.show', '3')}}">ООО ИжПЗ-Фотон</a></li>
+								<li><a href="{{route('organizations.show', '4')}}">ООО ИжПЗ-Телеком</a></li>
+								<li><a href="{{route('organizations.show', '5')}}">ООО ИжПЗ-Тестирование</a></li>
 							</ul>
 						</li>
+						@guest('web')
 						<li>
 							<span class="opener">Заказ продукции</span>
 							<ul>
@@ -22,6 +23,8 @@
 								<li><a href="#">Состояние заказа</a></li>							
 							</ul>
 						</li>
+						@endguest
+						@auth('web')
 						<li>
 							<span class="opener">Этапы выполнения заказа</span>
 							<ul>
@@ -31,7 +34,8 @@
 								<li><a href="#">Договор</a></li>
 								<li><a href="#">Отгрузка</a></li>
 							</ul>
-						</li>						
+						</li>
+						@endauth						
 						<li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
 						
