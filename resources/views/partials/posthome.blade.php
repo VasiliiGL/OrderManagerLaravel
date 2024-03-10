@@ -6,6 +6,6 @@
 				        @include("posts.partials.itemhome",["post"=>$post])
                     @endforeach
 					<ul class="actions">
-						<li><a href="{{route('posts.index')}}" class="button">More</a></li>
+						<li><a href="{{route('home')}}" class="button">ntct</a></li>
 					</ul>
 				</section>

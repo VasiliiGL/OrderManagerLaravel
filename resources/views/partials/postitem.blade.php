@@ -9,6 +9,6 @@
 						</article>						
 					</div>
 					<ul class="actions">
-						<li><a href="{{route('posts.index')}}" class="button">Назад</a></li>
+						<li><a href="{{route('home')}}" class="button">Назад</a></li>
 					</ul>
 				</section>

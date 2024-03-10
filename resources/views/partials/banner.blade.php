@@ -15,9 +15,9 @@
 							• Робототехника;
 							• Контрольно-измерительная аппаратура.
 						</p>
-						<ul class="actions">
+						<!--<ul class="actions">
 							<li><a href="#" class="button big">продолжение...</a></li>
-						</ul>
+						</ul>-->
 					</div>
 					<span class="image object">
 						<img src="images/ИжПЗ.jpg" alt="" />

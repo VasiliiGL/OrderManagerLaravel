@@ -47,9 +47,17 @@ class OrderController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
+    }
+
+    public function mycreate($id)
+    {
+        $customer = Customer::where(["id"=>$id])->first();
+        return view('customer.orders.create',[  
+            "customer"=>$customer
+        ]);
     }
 
     /**

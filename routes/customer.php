@@ -11,3 +11,4 @@ Route::post('login_process', [AuthController::class, 'login'])->name('login_proc
 Route::get('customer/orders/showAll/{id}',[OrderController::class, 'showAll'])-> name('orders.showAll');
 //Route::get('customer/orders/organization/{id}',[OrderController::class, 'organization'])-> name('orders.organization');
 Route::get('customer/orders/showorder/{id}',[OrderController::class, 'show'])-> name('orders.show');
+Route::get('customer/orders/mycreate/{id}', [OrderController::class, 'mycreate'])->name('orders.mycreate');

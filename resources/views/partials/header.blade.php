@@ -5,7 +5,7 @@
 						<li><a href="#VK" onclick="window.open('https://vk.com/share.php?url='+ window.location.href +'')" class="icon brands fa-vk"><span class="label">ВК</span></a></li>
 						<li><a href="https://t.me/79124564606" class="icon brands fa-telegram"><span class="label">Телеграмм</span></a></li>
 						<li><a href="https://www.whatsapp.com/" class="icon brands fa-whatsapp"><span class="label">whatsapp</span></a></li>
-						<li><a href="https://www.viber.com/ru/" class="icon brands fa-viber"><span class="label">mail</span></a></li>
+						<li><a href="https://www.viber.com/ru/" class="icon brands fa-viber"><span class="label">viber</span></a></li>
 						<li><a href="mailto:mail@example.com" class="icon brands fa-google"><span class="label">mail</span></a></li>
 						<div class="sm:mb-0 self-center">
 							@auth('web')
