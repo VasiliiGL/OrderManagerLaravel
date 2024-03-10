@@ -19,7 +19,7 @@
 						<li>
 							<span class="opener">Заказ продукции</span>
 							<ul>
-								<li><a href="{{route('customer.login')}}">Заказ</a></li>
+								<li><a href="{{route('customer.register')}}">Заказ</a></li>
 								<li><a href="#">Состояние заказа</a></li>							
 							</ul>
 						</li>

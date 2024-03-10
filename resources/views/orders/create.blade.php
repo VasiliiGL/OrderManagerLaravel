@@ -1,19 +1,24 @@
 @extends ('layouts.app')
 
-@section('title',$order->number)
+@section('title','Заказы')
 
 @section('content')
 <!-- Wrapper -->
 			<div id="wrapper">
-<p> Заказы!!!</p>
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                            @include('orders.partials.order')          
+							@include('orders.createform')
+			
+
+							<ul class="actions">
+								<li><a href="{{route('home')}}" class="button">Назад</a></li>
+							</ul>
 						</div>
-                        
+					
 					</div>
                    
                     
@@ -21,7 +26,11 @@
 					<div id="sidebar">
 						<div class="inner">
 
-						
+							<!-- Search -->
+                             @include('partials.search')
+
+							<!-- Menu menu-->
+                                @include('partials.menu')
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

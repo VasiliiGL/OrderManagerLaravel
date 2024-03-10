@@ -11,14 +11,12 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-							@include('customer.orders.createform', $customer)
-			
-
-							<ul class="actions">
-								<li><a href="{{route('home')}}" class="button">Назад</a></li>
-							</ul>
+                            @foreach($orders as $order)
+				                @include("orders.partials.itemorder",["order"=>$order, "organization"=>$organization])
+                            @endforeach
+                           <div > {{$orders->links()}}  </div>                    
 						</div>
-					
+                        
 					</div>
                    
                     

@@ -10,9 +10,6 @@ use App\Models\Organization;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
       //dd($request);
@@ -38,39 +35,36 @@ class OrderController extends Controller
 
         $orders = Order::where ('customer_id',$id)->orderBy('number','asc')->paginate(3);
         $customer= Customer::find ($id);
-
-         return view('customer.orders.index',[
+//dd($customer);
+         return view('orders.index',[
              "orders"=>$orders, "customer"=>$customer,
          ]);
     }
+    
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create($id)
+    public function createOrderForm($id)
     {
-        
-    }
-
-    public function mycreate($id)
-    {
+        $organizations= Organization::pluck('title');
+        //dd($organizations);
         $customer = Customer::where(["id"=>$id])->first();
-        return view('customer.orders.create',[  
-            "customer"=>$customer
+        //dd( $customer);
+        return view('orders.create',[  
+            "customer"=>$customer,  "organizations"=>$organizations,
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+   
+    public function createOrderFormProcess(Request $request)
     {
-        //
+        $data=$request->validate([
+            "customer"=>'required|string|min:4|max:30',
+            "organization"=>'required|string|min:4|max:30',
+            "number"=>["required","string"],
+            "description"=>["required","string"],
+            "thumbnail"=>["required","file"],
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
         $order = Order::findOrFail($id);
@@ -86,43 +80,4 @@ class OrderController extends Controller
     }
 
 
-
-  /*  public function show(string $id)
-    {
-        dd($id);
-          $x=1;
-          //dd( $x);
-          //$orders = Order::orderBy("created_at","DESC")->paginate(3);
-     
-          $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(3);
-          $customer= Customer::find ($x);
-   
-           return view('customer.orders.index',[
-               "orders"=>$orders, "customer"=>$customer
-           ]);
-      }*/
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

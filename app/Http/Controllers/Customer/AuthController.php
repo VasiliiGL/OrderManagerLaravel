@@ -13,6 +13,25 @@ class AuthController extends Controller
         return view("customer.auth.login");
     }
 
+    public function registerForm()
+    {
+        return view("customer.auth.registerForm");
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            "title"=>["required","name","string"],
+            "adress"=>["required","adress","string"],
+            "email"=>["required","email","string"],
+            "description"=>["required","text","string"],
+            "password"=>["required","confirmed"],
+        ]);
+
+    }
+
+
+
     public function login(Request $request)
     {
         

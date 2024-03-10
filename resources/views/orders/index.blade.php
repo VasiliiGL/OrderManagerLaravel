@@ -11,12 +11,28 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-                            @foreach($orders as $order)
-				                @include("orders.partials.itemorder",["order"=>$order, "organization"=>$organization])
-                            @endforeach
-                           <div > {{$orders->links()}}  </div>                    
+			
+							<table>
+								<caption>Перечень заказов {{$customer->title}}</caption>
+								<tr><th> Номер заказа </th> <th>Описание</th><th>Изготовитель</th>
+								@foreach($orders as $order)
+
+								<tr><th>  <a href="{{route ('orders.show',$order->id )}}">{{$order->number}}</a> </th> <th>{!! $order->description !!}</th><th>{!! $order->Organization->title !!}</th>
+								@endforeach
+
+							</table>
+								
+                           <div > {{$orders->links()}}  </div>    
+						   
+						   	<ul class="actions" >
+								<li><a href="{{route('customer.createOrderForm', $customer->id)}}" class="button">Новый заказ</a></li>
+							</ul>
+						
+							<ul class="actions">
+								<li><a href="{{route('home')}}" class="button">Назад</a></li>
+							</ul>
 						</div>
-                        
+					
 					</div>
                    
                     
