@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserDetail;
 
 class UserController extends Controller
 {
@@ -13,10 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy("created_at","DESC")->paginate(10);
+        $usersDetail = UserDetail::orderBy("created_at","DESC")->paginate(10);
+        //dd($usersDetail);
 
         return view('admin.users.index',[
-            "users"=>$users,
+            "usersDetail"=>$usersDetail,
         ]); 
     }
 

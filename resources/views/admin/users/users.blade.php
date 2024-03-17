@@ -8,12 +8,12 @@
 
                     <table>
                         <caption>Перечень пользователей </caption>
-                            <tr><th> Логин </th><th> Email </th> <th>Фамилия</th><th>Должность</th><th>Место работы</th>
-                                @foreach($users as $user)
-                                    <tr> <th>{!! $user->name !!}</th> <th>  <a href="#">{{$user->email}}</a> </th> <th>{!! $user->name !!}</th><th>{!!  $user->name!!}</th><th>{!! $user->name !!}</th>
+                            <tr><th> Логин </th><th> Email </th> <th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Должность</th><th>Место работы</th>
+                                @foreach($usersDetail as $userDetail)
+                                    <tr> <th>{!! $userDetail->User->name !!}</th> <th>  {!! $userDetail->User->email !!} </th> <th>{!! $userDetail->lastname!!}</th>  <th>{!! $userDetail->firstname!!}</th><th>{!! $userDetail->fathername!!}</th><th>{!! $userDetail->jobtitle!!}</th><th>{!! $userDetail->Organization->title !!}</th>
                                     <td>
-                                        <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
-                                        <a href="{{route( 'admin.users.edit', $user->id)}}" class="button">Изменить</a>
+                                        <form action="#" method="POST">
+                                        <a href="#" class="button">Изменить</a>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" >Удалить</button>

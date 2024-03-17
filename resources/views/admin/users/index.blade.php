@@ -28,7 +28,7 @@
 
 			<!-- Section posts -->
       
-			@include('admin.users.users',["users"=>$users])
+			@include('admin.users.users',["usersDetail"=>$usersDetail])
 
           
 
