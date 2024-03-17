@@ -1,6 +1,6 @@
 @extends ('layouts.admin')
 
-@section('title', 'Статьи ADMIN')
+@section('title', 'Страница администратора - Заказы')
 @section('content')
 <!-- Wrapper -->
 <div id="wrapper">
@@ -27,11 +27,13 @@
 			</header>
 
 			<!-- Section posts -->
-         
-						<h2>Страница администратора</h2>
-				
-		
-                         
+      
+			@include('admin.orders.orders',["orders"=>$orders])
+
+          
+
+
+                          
         </div>
         
     </div>
@@ -45,7 +47,7 @@
           
 
             <!-- Menu menu-->
-                @include('admin.management.menu')
+           
 
             <!-- Section contacts -->
                 @include('partials.contacts')

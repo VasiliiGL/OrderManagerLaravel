@@ -8,7 +8,7 @@
 					<li><a href="{{route('admin.posts.index')}}">Новости предприятия</a></li>
 					<li><a href="#">Заказчики</a></li>
 					<li><a href="#">Пользователи</a></li>
-					<li><a href="#">Заказы</a></li>
+					<li><a href="{{route('admin.orders.index')}}">Заказы</a></li>
 						
 					</ul>
 				</nav>

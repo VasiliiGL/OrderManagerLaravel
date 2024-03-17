@@ -17,11 +17,11 @@ Route::middleware("guest:admin")->group(function(){
 
 Route::middleware("auth:admin")->group(function(){
     Route::resource('posts', PostController::class);
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource ('orders', OrderController::class);
-    Route::resource ('posts', PostController::class);
     Route::resource ('customers', CustomerController::class);
     Route::resource ('organizations', OrganizationController::class);
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
 });
 
 

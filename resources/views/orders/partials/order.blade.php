@@ -7,7 +7,5 @@
 							<p>{!! $order->description !!}</p>						
 						</article>						
 					</div>
-					<ul class="actions">
-						<li><a href="#" class="button">Назад</a></li>
-					</ul>
+					
 				</section>
