@@ -29,9 +29,7 @@
 			<!-- Section posts -->
       
 			@include('admin.posts.posts',["posts"=>$posts])
-
-
-                          
+       
         </div>
         
     </div>

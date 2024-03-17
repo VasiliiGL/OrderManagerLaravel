@@ -5,7 +5,7 @@
                     <a href="{{route('admin.posts.create')}}" class="text-indigo-600 hover:text-indigo-900">Добавить</a>
 				
 					</header>
-
+                    <div > 
                     @foreach($posts as $post)
 				        @include("posts.partials.item",["post"=>$post])
                         <div class="mt-8">
@@ -18,6 +18,7 @@
                             
                         </div>
                     @endforeach
+                    <div > {{$posts->links()}}  </div> 
 					<ul class="actions">
 						<li><a href="{{route('admin.management')}}" class="button">Назад</a></li>
 					</ul>
