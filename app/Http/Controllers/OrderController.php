@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Organization;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -43,5 +44,13 @@ $x=1;
    public function selectorganization()
    {
 
+   }
+
+   public function destroy(string $id)
+   {
+        $customer=Order::Order::findOrFail($id)->value('customer_id');
+        dd($customer);
+       Order::destroy($id);
+       return redirect(route('home'));
    }
 }

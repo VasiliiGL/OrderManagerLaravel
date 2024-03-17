@@ -79,5 +79,13 @@ class OrderController extends Controller
         ]);
     }
 
+    public function destroy(string $id)
+    {
+         $customer=Order::Order::findOrFail($id)->value('customer_id');
+         dd($customer);
+        Order::destroy($id);
+        return redirect(route('home'));
+    }
+
 
 }
