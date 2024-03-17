@@ -22,6 +22,6 @@
                                     @endforeach
 			        </table>
 					<ul class="actions">
-						<li><a href="{{route('home')}}" class="button">Назад</a></li>
+                        <li><a href="{{route('admin.management')}}" class="button"> Назад</a></li>
 					</ul>
 </section>

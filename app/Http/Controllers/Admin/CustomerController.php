@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -12,7 +13,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::orderBy("created_at", "DESC")->paginate(10);
+        return view('admin.customers.index',[
+         "customers"=>$customers,
+        ]);
     }
 
     /**
