@@ -11,7 +11,7 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-			
+			 <!--Перечень заказов -->
 							<table>
 								<caption>Перечень заказов {{$customer->title}}</caption>
 								<tr><th> Номер заказа </th> <th>Описание</th><th>Изготовитель</th>

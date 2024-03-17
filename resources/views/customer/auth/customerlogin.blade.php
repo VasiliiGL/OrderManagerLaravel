@@ -11,6 +11,7 @@
         <div class="inner">
             <!-- Header -->
             @include('partials.header')
+             <!--customerlogin -->
             @include('partials.customerlogin')
                           
         </div>
