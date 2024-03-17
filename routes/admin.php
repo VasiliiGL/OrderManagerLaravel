@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\OrganizationController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -20,6 +21,7 @@ Route::middleware("auth:admin")->group(function(){
     Route::resource ('orders', OrderController::class);
     Route::resource ('customers', CustomerController::class);
     Route::resource ('organizations', OrganizationController::class);
+    Route::resource ('users', UserController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 });
