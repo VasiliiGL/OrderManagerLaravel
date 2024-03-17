@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Organization;
 
 class OrganizationController extends Controller
 {
@@ -12,7 +13,10 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        $organizations = Organization::orderBy("created_at", "DESC")->paginate(10);
+        return view('admin.organizations.index',[
+         "organizations"=>$organizations,
+        ]);
     }
 
     /**
