@@ -64,6 +64,7 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       Customer::destroy($id);
+       return redirect(route('admin.customers.index'));
     }
 }

@@ -10,10 +10,10 @@ use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::get('management', [ManagementController::class, 'index'])->name('management');
 Route::post('login_process', [AuthController::class, 'login'])->name('login_process');
+
 Route::middleware("guest:admin")->group(function(){
- 
+
 });
 
 Route::middleware("auth:admin")->group(function(){
@@ -23,6 +23,7 @@ Route::middleware("auth:admin")->group(function(){
     Route::resource ('organizations', OrganizationController::class);
     Route::resource ('users', UserController::class);
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('management', [ManagementController::class, 'index'])->name('management');
 
 });
 

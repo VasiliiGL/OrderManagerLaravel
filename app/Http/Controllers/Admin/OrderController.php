@@ -69,6 +69,7 @@ class OrderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       Order::destroy($id);
+        return redirect(route('admin.orders.index'));
     }
 }
