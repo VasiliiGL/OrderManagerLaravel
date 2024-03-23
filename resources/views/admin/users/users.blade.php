@@ -2,7 +2,7 @@
 					<header class="major">
                     <h2>Страница администратора - Пользователи</h2>
                 
-                    <a href="{{route('admin.orders.create')}}" class="text-indigo-600 hover:text-indigo-900">Добавить новый заказ</a>
+                    <a href="{{route('admin.users.create')}}" class="text-indigo-600 hover:text-indigo-900">Добавить новый заказ</a>
 				
 					</header>
 

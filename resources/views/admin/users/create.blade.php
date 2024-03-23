@@ -27,8 +27,6 @@
 			</header>
 
 			<!-- Section posts -->
-            @include('partials.header')
-			@include('admin.posts.createform')
       
 
        

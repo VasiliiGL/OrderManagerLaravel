@@ -28,8 +28,7 @@
 
 			<!-- Section posts -->
             @include('partials.header')
-			@include('admin.posts.createform')
-      
+			@include('admin.organizations.createform')
 
        
         </div>
