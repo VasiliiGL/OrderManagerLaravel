@@ -1,6 +1,6 @@
 @extends ('layouts.admin')
 
-@section('title', 'Страница администратора -Создание новости')
+@section('title', isset($post) ? "Редактировать статью ID ($post->id)":'Страница администратора -Создание новости')
 @section('content')
 <!-- Wrapper -->
 <div id="wrapper">

@@ -1,14 +1,10 @@
 <section>
 <div class="h-screen dg-white flex flex-col space-y-10 justify-center items-center">
     <div class="bg-white w-96 shadow-x1 rounted p-5">
-        <h1 class="text-3x1 font-medium">{{ isset($post) ? "Редактировать статью ID ($post->id)":'Создание новости'}}</h1>
+        <h1 class="text-3x1 font-medium">Создание статьи</h1>
 
-        <form enctype="multipart/form-data"  method="POST" action="{{ isset($post) ? route('admin.posts.update', $post->id): route('admin.posts.store') }}"   class="col-3 offset-4">
+        <form enctype="multipart/form-data"  method="POST" action="{{ route('admin.posts.store') }}"   class="col-3 offset-4">
             @csrf
-
-            @if(isset($post))
-                @method ('PUT')
-            @endif
             <ul>
                 <li>
                 <label for="title">Название:</label>
@@ -32,11 +28,6 @@
                     @enderror
                 </li>
                 <li>
-                @if(isset($post) && $post->thumbnail)
-                    <div>
-                        <img src="storage/posts/{{$post->thumbnail}}" width="300" height="300"alt="" />
-                    </div>
-                @endif
                 <label for="thumbnail">Фото:</label>
                     <input  name="thumbnail" type="file" class="form-control" placeholder="Фото" value ="{{$post->thumbnail??''}}" />
                     @error('thumbnail')
