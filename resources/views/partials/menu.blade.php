@@ -28,7 +28,7 @@
 						<li>
 							<span class="opener">Этапы выполнения заказа</span>
 							<ul>
-								<li><a href="{{route('ordersAll')}}">Заказы</a></li>
+								<li><a href="{{route('ordersorganization')}}">Заказы</a></li>
 								<li><a href="#">Номенклатура</a></li>
 								<li><a href="#">Ценообразование</a></li>
 								<li><a href="#">Договор</a></li>

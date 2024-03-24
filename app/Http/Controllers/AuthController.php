@@ -20,6 +20,8 @@ class AuthController extends Controller
             'password'=>'required|min:4|max:100'
         ]);
 
+        $user = User::where("name",$request->name)->first();
+
        if (auth("web")->attempt($data))
        {
          return redirect()->route('home');

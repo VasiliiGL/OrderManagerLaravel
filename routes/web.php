@@ -11,6 +11,7 @@ use App\Models\Organization;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[IndexController::class, 'index'])->name('home');
+
  //->middleware("r");
  Route::get('/posts',[PostController::class, 'index'])->name('posts.index');
  Route::get('/posts/{id}',[PostController::class, 'show'])->name('posts.show');
@@ -30,6 +31,7 @@ Route::get('/store',[EditorController::class, 'store'])->name('store');
 // Страница со списком всех заказов
 Route::get('/orders',[OrderController::class, 'index'])->name('orders.index');
 Route::get('/ordersAll',[OrderController::class, 'ordersAll'])->name('ordersAll');
+Route::get('/ordersorganization',[OrderController::class, 'ordersorganization'])->name('ordersorganization');
 // По детальная карточка  заказа
 Route::get('/orders/{id}',[OrderController::class, 'show'])->name('orders.show');
 

@@ -38,7 +38,7 @@
                     </div>
                 @endif
                 <label for="thumbnail">Фото:</label>
-                    <input  name="thumbnail" type="file" class="form-control" placeholder="Фото" value ="{{$post->thumbnail??''}}" />
+                    <input  name="thumbnail" type="file" class="form-control" placeholder="Фото"  />
                     @error('thumbnail')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
