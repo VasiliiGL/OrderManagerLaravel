@@ -10,7 +10,7 @@
 						<div class="sm:mb-0 self-center">
 							@auth('web')
 							<div>
-							<p> Пользователь: login- {{$user->name}}</p>
+							<!--<p> Пользователь: login- $user->name</p>-->
 								<a href="{{route('logout')}}" >Выйти</a>
 							</div>
 							@endauth
