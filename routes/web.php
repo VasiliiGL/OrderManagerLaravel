@@ -39,6 +39,10 @@ Route::get('/organizationsAll',[OrganizationController::class, 'index'])->name('
 Route::get('/organizations/{id}',[OrganizationController::class, 'organization'])->name('organizations.show');
 Route::get('/orgConnection',[OrganizationController::class, 'orgConnection'])->name('organizations.orgConnection');
 
+//Страница номенклатура заказа
+
+Route::get('/nomenclature/{id}', [OrderController::class,'nomenclature'])->name('nomenclature');
+
 Route::middleware("auth")->group(function(){
     Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
     

@@ -17,7 +17,12 @@
                 @enderror
 
             <button type="submit" class="btn btn-lg btn-primary">Войти</button>
+
         </form>
+
+                            <ul class="actions">
+								<li><a href="{{route('home')}}" class="button">Назад</a></li>
+							</ul>
     </div>
 </div> 
 </section>

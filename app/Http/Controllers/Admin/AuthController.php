@@ -16,6 +16,11 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        if (auth("web"))
+        {
+            auth("web")->logout();
+        }
+        
         $data=$request->validate([
             "name"=>'required|string|min:4|max:30', //|exists:users,name
             'password'=>'required|min:4|max:100'

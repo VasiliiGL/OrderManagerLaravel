@@ -49,12 +49,20 @@ $x=1;
 
    // dd( $orders);
     return view('orders.ordersAll',[
-        "orders"=>$orders, 
+        "orders"=>$orders, "user"=>$user,
     ]);
    }
 
 
    public function show($id)
+   {
+    $order = Order::findOrFail($id);
+    return view('orders.show',[
+        "order" =>$order, 
+    ]);
+   }
+
+   public function nomenclature($id)
    {
     $order = Order::findOrFail($id);
     return view('orders.show',[

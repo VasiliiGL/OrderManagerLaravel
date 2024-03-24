@@ -8,6 +8,7 @@
 <!-- Main -->
     <div id="main">
         <div class="inner">
+           
             <!-- Header -->
             <header id="header">
 					<a href="{{route('home')}}" class="logo"><strong>Группа компаний</strong> ИжПЗ</a>

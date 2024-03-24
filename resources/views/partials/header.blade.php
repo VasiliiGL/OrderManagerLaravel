@@ -9,13 +9,16 @@
 						<li><a href="mailto:mail@example.com" class="icon brands fa-google"><span class="label">mail</span></a></li>
 						<div class="sm:mb-0 self-center">
 							@auth('web')
-								<a href="{{route('logout')}}" 
-								class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Выйти</a>
+							<div>
+							<p> Пользователь: login- {{$user->name}}</p>
+								<a href="{{route('logout')}}" >Выйти</a>
+							</div>
 							@endauth
 
+
 							@guest('web')
-							<a href="{{route('login')}}" 
-								class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Войти</a>
+						
+							<a href="{{route('login')}}" >Войти</a>
 							@endguest
 					
 						</div>
