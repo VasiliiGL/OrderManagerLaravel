@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('changedocument_orders', function (Blueprint $table) {
+        Schema::create('assemblyunit_changedocument', function (Blueprint $table) {
             $table->id();
             $table->foreignId('changedocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('order_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->integer('need'); // требуемое количество изделий
+            $table->foreignId('assemblyunit_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->integer('applicability'); //количество деталей в сборке
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('changedocument_orders');
+        Schema::dropIfExists('assemblyunit_changedocument');
     }
 };

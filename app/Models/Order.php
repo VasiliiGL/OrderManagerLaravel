@@ -29,7 +29,7 @@ class Order extends Model
     }
     public function users()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(User::class);
     }
     public function usercustomers()
     {

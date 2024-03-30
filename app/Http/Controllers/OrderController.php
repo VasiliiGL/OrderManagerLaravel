@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Organization;
 use App\Models\User;
 use App\Models\UserDetail;
+use App\Models\Status;
 
 use Illuminate\Http\Request;
 
@@ -65,9 +66,15 @@ $x=1;
    public function nomenclature($id)
    {
     $order = Order::findOrFail($id);
+    dd($order->changedocuments);
     return view('orders.show',[
         "order" =>$order, 
     ]);
+   }
+
+   public function addorderdetails()
+   {
+
    }
 
 

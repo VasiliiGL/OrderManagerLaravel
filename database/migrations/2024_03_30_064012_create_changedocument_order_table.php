@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('changedocument_orders', function (Blueprint $table) {
+        Schema::create('changedocument_order', function (Blueprint $table) {
             $table->id();
             $table->foreignId('changedocument_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('order_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('changedocument_orders');
+        Schema::dropIfExists('changedocument_order');
     }
 };
