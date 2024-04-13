@@ -24,7 +24,7 @@ class DesigndocumentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.designdocument.create',[]);
     }
 
     /**
@@ -64,6 +64,7 @@ class DesigndocumentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Designdocument::destroy($id);
+        return redirect(route('admin.designdocument.index'));
     }
 }

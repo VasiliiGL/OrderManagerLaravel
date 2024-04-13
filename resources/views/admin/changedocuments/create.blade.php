@@ -1,6 +1,6 @@
 @extends ('layouts.admin')
 
-@section('title', 'Страница администратора -Создать обозначение и тип документа')
+@section('title', 'Страница администратора -Создание чертежа с номером изменения')
 @section('content')
 <!-- Wrapper -->
 <div id="wrapper">
@@ -26,7 +26,7 @@
                    
 			</header>
 
-			<!-- Section posts -->
+			<!-- Section чертеж -->
       
 
        

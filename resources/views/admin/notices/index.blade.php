@@ -26,9 +26,9 @@
                    
 			</header>
 
-			<!-- Section  -->
+			<!-- Section Извещения -->
             
-			
+            @include('admin.notices.notice',["notices"=>$notices] )
 
           
 

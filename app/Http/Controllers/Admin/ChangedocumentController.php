@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Changedocument;
 use Illuminate\Http\Request;
 
 class ChangedocumentController extends Controller
@@ -12,7 +13,11 @@ class ChangedocumentController extends Controller
      */
     public function index()
     {
-        return view("admin.changedocuments.index");
+        $changedocuments = Changedocument::orderBy("created_at","DESC")->paginate(10);
+        return view("admin.changedocuments.index",[
+            "changedocuments"=>$changedocuments,
+        ]
+        );
     }
 
     /**
@@ -20,7 +25,7 @@ class ChangedocumentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.changedocuments.create',[]);
     }
 
     /**
@@ -60,6 +65,7 @@ class ChangedocumentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Changedocument::destroy($id);
+       return redirect(route('admin.changedocument.index'));
     }
 }

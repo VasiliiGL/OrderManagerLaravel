@@ -26,7 +26,10 @@
                    
 			</header>
 
-			<!-- Section posts -->
+		
+            @include('partials.header')
+            	<!-- Section пользователь -->
+			@include('admin.users.createform')
       
 
        

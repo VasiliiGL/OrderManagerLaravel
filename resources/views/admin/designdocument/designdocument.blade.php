@@ -20,6 +20,7 @@
                                     </td>
                                     @endforeach
 			        </table>
+                    <div > {{$designdocuments->links()}}  </div> 
 					<ul class="actions">
                         <li><a href="{{route('admin.management')}}" class="button"> Назад</a></li>
 					</ul>

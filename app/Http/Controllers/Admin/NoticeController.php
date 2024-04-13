@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -12,7 +13,11 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        return view("admin.notices.index");
+        $notices=Notice::orderBy("created_at","DESC")->paginate(10);
+        return view("admin.notices.index",[
+            "notices"=>$notices,
+        ]
+        );
     }
 
     /**
@@ -20,7 +25,7 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.notices.create',[]);
     }
 
     /**
@@ -60,6 +65,7 @@ class NoticeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Notice::destroy($id);
+        return redirect(route('admin.notice.index'));
     }
 }

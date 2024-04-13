@@ -2,7 +2,7 @@
 					<header class="major">
                     <h2>Страница администратора - Пользователи</h2>
                 
-                    <a href="{{route('admin.users.create')}}" class="text-indigo-600 hover:text-indigo-900">Добавить новый заказ</a>
+                    <a href="{{route('admin.users.create')}}" class="text-indigo-600 hover:text-indigo-900">Добавить учетную запись пользователя</a>
 				
 					</header>
 
@@ -21,7 +21,10 @@
                                     </td>
                                     @endforeach
 			        </table>
+               
+                    <nav class="button">{{$usersDetail->links()}}</nav >
 					<ul class="actions">
+                   
                         <li><a href="{{route('admin.management')}}" class="button"> Назад</a></li>
 					</ul>
 </section>
