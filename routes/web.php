@@ -43,10 +43,14 @@ Route::get('/orgConnection',[OrganizationController::class, 'orgConnection'])->n
 
 Route::get('/nomenclature/{id}', [OrderController::class,'nomenclature'])->name('nomenclature');
 
+
+
+
 Route::middleware("auth")->group(function(){
     Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
     Route::get('/addorderdetail/{id}',[OrderController::class,'addorderdetails'])->name('addorderdetails');
     Route::post('/addorderdetail_process', [OrderController::class, 'addorderdetailProcess'])->name('addorderdetail_process');
+    Route::post('/posts/comment/{id}',[PostController::class,'comment'])->name('comment');
 });
 
 Route::middleware("guest")->group(function(){

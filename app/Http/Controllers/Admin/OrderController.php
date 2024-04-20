@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\OrderFormRequest;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Organization;
+use App\Models\Post;
 
 class OrderController extends Controller
 {
@@ -27,17 +31,23 @@ class OrderController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create() // ПЕРЕХОД НА ФОРМУ - СОЗДАНИЕ ЗАКАЗА
     {
-        return view('admin.orders.create',[]);
+        $organizations= Organization::pluck('title');
+        $customers= Customer::pluck('title');
+        return view('admin.orders.create',[
+            "organizations"=>$organizations,
+            "customers"=>$customers,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(OrderFormRequest $request) //СОЗДАНИЕ ЗАКАЗА
     {
-        //
+        $order = Order::create($request->validated()); // попадают только те поля которые указаны в првилах FormRequest
+        return redirect(route('admin.orders.index'));
     }
 
     /**

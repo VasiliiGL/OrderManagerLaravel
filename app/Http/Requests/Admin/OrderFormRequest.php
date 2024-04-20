@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddOrderDetailFormRequest extends FormRequest
+class OrderFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return auth("web")->check();
+        return auth("admin")->check();
     }
 
     /**
@@ -22,9 +22,14 @@ class AddOrderDetailFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //"order_id"=>["required"],
-           // "changedocument_id"=>["required"],
-          //  "need"=>["required"],
+            "customer_id"=>["required"],
+            "organization_id"=>["required"],
+            "number"=>["required"],
+            "data"=>["date"],
+            "description"=>["required"],
+            "desiredDate"=>["required"],
+            "letter"=>["file"],
+            
         ];
     }
 }

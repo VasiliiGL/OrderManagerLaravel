@@ -32,7 +32,7 @@
    
                 <li>
                 <label for="phone">Телефон:</label>
-                    <input  name="phone" type="text" class="form-control" placeholder="Телефон" value ="{{$post->phone??''}}" />
+                    <input  name="phone" type="text" class="form-control" placeholder="Телефон" value ="{{$organization->phone??''}}" />
                     @error('preview')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
@@ -40,7 +40,7 @@
 
                 <li>
                 <label for="preview">Описание:</label>
-                    <input  name="description" type="text" class="form-control" placeholder="Описание" value ="{{$post->description??''}}" />
+                    <input  name="description" type="text" class="form-control" placeholder="Описание" value ="{{$organization->description??''}}" />
                     @error('description')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
@@ -48,7 +48,7 @@
 
                 <li>
                 <label for="password">Пароль:</label>
-                    <input  name="password" type="file" class="form-control" placeholder="Фото" value ="{{$post->password??''}}" />
+                    <input  name="password" type="file" class="form-control" placeholder="Пароль:" value ="{{$organization->password??''}}" />
                     @error('password')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
@@ -58,6 +58,9 @@
             <br />
             <button type="submit" class="btn btn-lg btn-primary">Сохранить </button>
         </form>
+        <ul class="actions">
+			<li><a href="{{route('admin.organizations.index')}}" class="button">Назад</a></li>
+		</ul>
     </div>
 </div> 
 </section>

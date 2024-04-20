@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddOrderDetailFormRequest extends FormRequest
+class CommentForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,15 @@ class AddOrderDetailFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //"order_id"=>["required"],
-           // "changedocument_id"=>["required"],
-          //  "need"=>["required"],
+           "text"=> ["required", "string","min:5"],
+           "user_id"=> ["required", "exists:users,id"]
         ];
+    }
+
+    protected function prepareForValidation() //выполняется до валидации - при создании комментария надо добавить поле user_id
+    {
+        $this->merge([ //добавить к текущему запросу массив с данными
+                "user_id"=>auth("web")->id()
+        ]);
     }
 }

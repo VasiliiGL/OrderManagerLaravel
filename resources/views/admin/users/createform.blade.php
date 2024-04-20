@@ -19,24 +19,36 @@
                 </li>
                 <li>
                 <label for="email">Email:</label>
-                    <input  name="preview" type="text" class="form-control" placeholder="Email" value ="{{$user->email??''}}" />
+                    <input  name="preview" type="email" class="form-control" placeholder="Email" value ="{{$user->email??''}}" />
                     @error('email')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
                 </li>
                 <li>
                 <label for="password">Пароль:</label>
-                    <input  name="password" type="text" class="form-control" placeholder="Пароль" value ="{{$user->password??''}}" />
+                    <input  name="password" type="password" class="form-control" placeholder="Пароль" value ="{{$user->password??''}}" />
                     @error('password')
                         <p class="text-red-500">{{$message}}</p>
                     @enderror
                 </li>
-               
+                <li>
+                <input name="password_confirmation" type="password" class="w-full h-12 border border-grey-800 rounded px-3 @error('password_confirmation') border-red-500 @enderror" 
+                    placeholder="Подтверждение пароля"/>
+                    @error('password_confirmation')
+                        <p class="text-red-500">{{$message}}</p>
+                    @enderror
+       
+                <br>
+                </li>
                
             </ul>
             <br />
             <button type="submit" class="btn btn-lg btn-primary">Сохранить </button>
         </form>
+
+        <ul class="actions">
+			<li><a href="{{route('admin.users.index')}}" class="button">Назад</a></li>
+		</ul>
     </div>
 </div> 
 </section>

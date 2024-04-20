@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\NoticeFormRequest;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 
@@ -31,9 +32,11 @@ class NoticeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NoticeFormRequest $request)
     {
-        //
+        $notice = Notice::create($request->validated());
+
+        return redirect(route("admin.notice.index"));
     }
 
     /**

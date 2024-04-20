@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CustomerFormRequest;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 
@@ -30,9 +31,11 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CustomerFormRequest $request)
     {
-        //
+        $customer= Customer::create($request->validated());
+
+        return redirect(route("admin.customers.index"));
     }
 
     /**

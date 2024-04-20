@@ -11,10 +11,12 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-
-                            <h2 > Перечень заказов </h1>
+							<h5>Организация: {{$user->userdetail->organization->title}} </h5>
+							<h5>Логин пользователя: {{$user->name}} / ФИО : {{$user->userdetail->lastname}} {{$user->userdetail->firstname}} {{$user->userdetail->fathername}}</h5>
+							
+                        
 							<table>
-								<caption>Перечень заказов  </caption>
+								<caption>Перечень заказов   {{$user->userdetail->organization->title}}</caption>
 								<tr><th> Номер заказа </th> <th>Описание</th><th>Изготовитель</th>
 								@foreach($orders as $order)
 
@@ -47,7 +49,7 @@
 							</ul>
 						</div>
                            
-						</div>
+						
                         
 					</div>
                    
@@ -57,10 +59,10 @@
 						<div class="inner">
 
 							<!-- Search -->
-                             @include('partials.search')
+                           
 
 							<!-- Menu menu-->
-                                @include('partials.menu')
+                               
 
 							<!-- Section contacts -->
                                 @include('partials.contacts')

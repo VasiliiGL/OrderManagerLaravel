@@ -1,6 +1,7 @@
 <section>
 <div class="h-screen dg-white flex flex-col space-y-10 justify-center items-center">
     <div class="bg-white w-96 shadow-x1 rounted p-5">
+    <h5>Страница администратора</h5>
         <h1 class="text-3x1 font-medium">{{ isset($post) ? "Редактировать статью ID ($post->id)":'Создание новости'}}</h1>
 
         <form enctype="multipart/form-data"  method="POST" action="{{ isset($post) ? route('admin.posts.update', $post->id): route('admin.posts.store') }}"   class="col-3 offset-4">
@@ -48,6 +49,9 @@
             <br />
             <button type="submit" class="btn btn-lg btn-primary">Сохранить </button>
         </form>
+        <ul class="actions">
+			<li><a href="{{route('admin.posts.index')}}" class="button">Назад</a></li>
+		</ul>
     </div>
 </div> 
 </section>

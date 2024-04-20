@@ -44,7 +44,7 @@ class OrderController extends Controller
 
     public function createOrderForm($id)
     {
-        $organizations= Organization::pluck('title');
+        $organizations= Organization::get();
         //dd($organizations);
         $customer = Customer::where(["id"=>$id])->first();
         //dd( $customer);
@@ -57,12 +57,15 @@ class OrderController extends Controller
     public function createOrderFormProcess(Request $request)
     {
         $data=$request->validate([
-            "customer"=>'required|string|min:4|max:30',
-            "organization"=>'required|string|min:4|max:30',
+            "customer_id"=>['required'],
+            "organization_id"=>['required'],
             "number"=>["required","string"],
             "description"=>["required","string"],
-            "thumbnail"=>["required","file"],
+            "thumbnail"=>["file"],
         ]);
+        $order = Order::create($data); // попадают только те поля которые указаны в првилах FormRequest
+        return redirect(route('customer.orders.index'));
+
     }
 
     public function show($id)

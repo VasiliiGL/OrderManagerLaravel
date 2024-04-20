@@ -104,13 +104,14 @@ $x=1;
    }
 
      
-   public function addorderdetailProcess(AddOrderDetailFormRequest $request)
+   public function addorderdetailProcess(Request $request)
    {
-    //dd ($request);
-      /* $data=$request->validate([
+    
+       $data=$request->validate([
            "detail"=>'required|string|min:4|max:30',
            "need"=>'required|integer',
-       ]);*/
+       ]);
+       dd ($request);
 
       // $changedocument_id =$request["designdocument_id"];
 
