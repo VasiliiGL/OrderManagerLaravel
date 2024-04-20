@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\OrderFormRequest;
+use App\Http\Requests\Customer\OrderForm;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Customer;
@@ -26,17 +28,19 @@ class OrderController extends Controller
          ]);
     }
 
-    public function showAll(string $id)
+   // public function showAll(string $id)
+    public function showAll()
     {
       //dd($id);
       //  $x=1;
         //dd( $x);
         //$orders = Order::orderBy("created_at","DESC")->paginate(3);
+        $customer =auth('customer')->user();
 
-        $orders = Order::where ('customer_id',$id)->orderBy('number','asc')->paginate(3);
-        $customer= Customer::find ($id);
+        $orders = Order::where ('customer_id',$customer->id)->orderBy('number','asc')->paginate(5);
+       // $customer= Customer::find ($id);
 //dd($customer);
-         return view('orders.index',[
+         return view('customer.orders.index',[
              "orders"=>$orders, "customer"=>$customer,
          ]);
     }
@@ -54,7 +58,7 @@ class OrderController extends Controller
     }
 
    
-    public function createOrderFormProcess(Request $request)
+   /* public function createOrderFormProcess(Request $request)
     {
         $data=$request->validate([
             "customer_id"=>['required'],
@@ -66,7 +70,7 @@ class OrderController extends Controller
         $order = Order::create($data); // попадают только те поля которые указаны в првилах FormRequest
         return redirect(route('customer.orders.index'));
 
-    }
+    }*/
 
     public function show($id)
     {
@@ -80,6 +84,26 @@ class OrderController extends Controller
         return view('orders.show',[
             "order"=>$order,
         ]);
+    }
+
+    public function createOrder()
+    {
+        $organizations= Organization::get();
+        //dd($organizations);
+        $customer =auth('customer')->user();
+        //dd( $customer);
+        return view('customer.orders.create',[  
+            "customer"=>$customer,  "organizations"=>$organizations,
+        ]);
+    }
+
+    public function createOrderFormProcess(OrderForm $request )
+    {
+        //dd($request);
+        $order = Order::create($request->validated()); // попадают только те поля которые указаны в првилах FormRequest
+
+        return redirect(route('customer.orders.showAll','1'));
+
     }
 
     public function destroy(string $id)

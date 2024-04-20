@@ -4,7 +4,7 @@ use App\Http\Controllers\Customer\AuthController;
 use App\Http\Controllers\Customer\OrderController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('orders', OrderController::class);
+//Route::resource('orders', OrderController::class);
 //Route::get('/orders/{id}',[OrderController::class, 'show'])->name('orders.show');
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'registerForm'])->name('register');
@@ -14,9 +14,15 @@ Route::post('/login_process', [AuthController::class, 'login'])->name('login_pro
 Route::get('/mycreateOrderForm/{id}', [OrderController::class, 'mycreateOrderForm'])->name('mycreateOrder');
 Route::post('/mycreateOrderForm_process', [OrderController::class, 'mycreateOrderForm_process'])->name('mycreateOrder_process');
 
-Route::get('/showAll/{id}',[OrderController::class, 'showAll'])-> name('orders.showAll');
+//Route::get('/showAll/{id}',[OrderController::class, 'showAll'])-> name('orders.showAll');
+Route::get('/showAll}',[OrderController::class, 'showAll'])-> name('orders.showAll');
 //Route::get('/showorder/{id}',[OrderController::class, 'show'])-> name('orders.show');
 
 Route::get('/createOrderForm/{id}', [OrderController::class, 'createOrderForm'])->name('createOrderForm');
-Route::post('/createOrderForm_process', [OrderController::class, 'createOrderFormProcess'])->name('createOrderForm_process');
+//Route::post('/createOrderForm_process', [OrderController::class, 'createOrderFormProcess'])->name('createOrderForm_process');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route:: middleware("customer")->group(function(){
+Route::get('order/create',[OrderController::class,'createOrder'])->name('createOrder');
+Route::post('/createOrderForm_process', [OrderController::class, 'createOrderFormProcess'])->name('createOrderFormProcess');
+});

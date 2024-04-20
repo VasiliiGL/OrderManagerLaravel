@@ -33,8 +33,10 @@ class OrderController extends Controller
      */
     public function create() // ПЕРЕХОД НА ФОРМУ - СОЗДАНИЕ ЗАКАЗА
     {
-        $organizations= Organization::pluck('title');
-        $customers= Customer::pluck('title');
+       // $organizations= Organization::pluck('title');
+      //  $customers= Customer::pluck('title');
+      $organizations= Organization::get();
+      $customers= Customer::get();
         return view('admin.orders.create',[
             "organizations"=>$organizations,
             "customers"=>$customers,

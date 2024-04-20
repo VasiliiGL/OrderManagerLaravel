@@ -11,7 +11,7 @@ class IndexController extends Controller
     {
         $user = auth()->user();
        // return view('home');
-        $posts = Post::orderBy("created_at", "DESC")->limit(3)->get();
+        $posts = Post::orderBy("created_at", "DESC")->cursorPaginate(3);
        //dd($posts);
        //return view('home');
        return view('home',[

@@ -15,18 +15,20 @@
 							@enderror
 							<button type="submit">Написать</button>
 						</form>	
-						<div>
+										
+					</div>
+					<div>
+						<h5>Комментарии : </h5>
 							@foreach($post->comments as $comment)
 								<div>
-									<p>{{$comment->user->name}}</p>
-									<p>{{$comment->text}}</p>
+									<p>Пользователь: {{$comment->user->name}}</p>
+									<textarea>{{$comment->text}}</textarea>
 									
 								</div>
 							@endforeach
 
 
-						</div>					
-					</div>
+						</div>	
 					<ul class="actions">
 						<li><a href="{{route('home')}}" class="button">Назад</a></li>
 					</ul>

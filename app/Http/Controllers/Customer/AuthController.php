@@ -41,12 +41,13 @@ class AuthController extends Controller
         ]);
       // dd( $data["title"]);
 
-       $idCustomer = Customer::where('title', $data["title"])->value('id');
+      // $idCustomer = Customer::where('title', $data["title"])->value('id');
        //dd($idCustomer);
 
        if (auth("customer")->attempt($data))
        {
-         return redirect()->route('customer.orders.showAll',[ $idCustomer]);
+         //return redirect()->route('customer.orders.showAll',[ $idCustomer]);
+         return redirect()->route('customer.orders.showAll');
        }
 
         return redirect()->route('customer.login')->withErrors(["title"=>"Пользователь не найден. Проверьте данные"]);

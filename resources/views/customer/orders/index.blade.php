@@ -31,10 +31,10 @@
 							</table>
 								
 
-                           <div > {{$orders->links()}}  </div>    
+                           <div class="button"> Конец списка {{$orders->links()}}  </div>    
 						   
 						   	<ul class="actions" >
-								<li><a href="{{route('customer.orders.mycreate', $customer->id)}}" class="button">Новый заказ</a></li>
+								<li><a href="{{route('customer.createOrder')}}" class="button">Новый заказ</a></li>
 							</ul>
 						
 							<ul class="actions">
@@ -42,7 +42,7 @@
 							</ul>
 
 							<ul class="actions">
-								<li><a href="{{route('logout')}}" class="button">Выход</a></li>
+								<li><a href="{{route('customer.logout')}}" class="button">Выход</a></li>
 							</ul>
 						</div>
 					
