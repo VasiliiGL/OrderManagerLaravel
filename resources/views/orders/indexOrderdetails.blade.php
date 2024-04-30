@@ -19,8 +19,8 @@
                                 @foreach($order->changedocuments as $changedocument)
                                 <tr><th>  {{$changedocument->designdocument->designation}}</a> </th> <th>{{$changedocument->designdocument->name}}</th><th>{{$changedocument->pivot->need}}</th>
                                         <td>
-										<a href="{{route('editOrderdetails', $changedocument->id)}}" class="button">Изменить</a>
-											<form action="{{route('destroyOrderdetails', $changedocument->id)}}" method="POST">
+										<a href="{{route('editOrderdetails', $changedocument->pivot->id)}}" class="button">Изменить</a>
+											<form action="{{route('destroyOrderdetails', $changedocument->pivot->id)}}" method="POST">
 												@csrf
 												@method('DELETE')
 												<button type="submit" >Удалить</button>
@@ -28,6 +28,7 @@
 										</td>
                                 @endforeach
 							</table>
+						
                             @auth('web')
                                 <td>										
 									<a href="{{route('createOrderdetails', $order->id)}}" class="button">Добавить позицию</a>										

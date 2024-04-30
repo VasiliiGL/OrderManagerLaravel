@@ -72,12 +72,12 @@ $x=1;
     
     $order = Order::findOrFail($id);
 
-    $changedocument_orders = ChangedocumentOrder::where ('order_id',$id)->orderBy("created_at","DESC")->paginate(10);
+   // $changedocument_orders = ChangedocumentOrder::where ('order_id',$id)->orderBy("created_at","DESC")->paginate(10);
 
-    $changedocuments = Changedocument::where('designdocument_id','$nomenclature->id')->paginate(10);
+   // $changedocuments = Changedocument::where('designdocument_id','$nomenclature->id')->paginate(10);
 
     return view('orders.indexOrderdetails',[
-        "order" =>$order, "changedocument_orders" =>$changedocument_orders,
+        "order" =>$order, //"changedocument_orders" =>$changedocument_orders,
     ]);
    }
 
@@ -149,23 +149,84 @@ $x=1;
        return redirect(route("nomenclature", $order_id));
    }
 
-   public function storeOrderdetails(Request $request) //добавить
-   {
+
+
+   public function storeOrderdetails(AddOrderDetailFormRequest $request) //добавить
+   {  $order = Order::findOrFail($request['order_id']);
+    $changedocument = Changedocument::findOrFail( $request['changedocument_id']);
+    $changedocument_order=ChangedocumentOrder::where ('order_id',$request['order_id'])->where('changedocument_id',$request['changedocument_id'])->get();//->firstOrFail();
+    //dd($changedocument_order->items);
+////////////////////////////
+
+$check=false;
+      foreach($order ->changedocuments as $changedocument  )
+    {
+        if ($changedocument->id==$request['changedocument_id'])
+        {
+            $changedocument_order_id=$changedocument->pivot->id;
+            $check=true;
+        }
+
+    }
+    //dd($check);
+   
+  //  dd($order);
+////////////////////////////////////////
+      /*  $order = Order::findOrFail($request['order_id']);
+        $changedocument = Changedocument::findOrFail( $request['changedocument_id']);
+        $changedocument_order=ChangedocumentOrder::where ('order_id',$request['order_id'])->where('changedocument_id',$request['changedocument_id'])->id;//->firstOrFail();
+        dd($changedocument_order);*/
+
+/////////////////////////////////
+      if($check){
+           // dd($changedocument_order);
+
+           return redirect (route('editOrderdetails', $changedocument_order_id));
+        }
+        else{
+            $changedocument_order = ChangedocumentOrder::create($request->validated());
+            return redirect(route("nomenclature", $request['order_id']));
+
+        }
+///////////////////////////////
+      // $changedocument_order = ChangedocumentOrder::create($request->validated());
+      // return redirect(route("nomenclature", $request['order_id']));
+
        
    }
 
    public function editOrderdetails($id) // изменить
    {
-       
+        $changedocument_order=ChangedocumentOrder::findOrFail($id);
+        $order_id=ChangedocumentOrder::findOrFail($id)->order_id;
+        $order=Order::findOrFail($order_id);
+        $changedocument_id= $changedocument_order->changedocument_id;
+        $changedocument = Changedocument::findOrFail( $changedocument_id);
+      
+
+        return view('orders.addorderdetails',[
+        "order" =>$order, "changedocument_order"=>$changedocument_order, "changedocument"=>$changedocument,
+    ]);
    }
 
-   public function updateOrderdetails(Request $request, $id) // обновить
+   public function updateOrderdetails(AddOrderDetailFormRequest $request, $id) // обновить
    {
+        $changedocument_order=ChangedocumentOrder::findOrFail($id);
+       
+        $changedocument_order ->update($request->validated());
+       
+
+        return redirect(route("nomenclature", $request['order_id']));
        
    }
 
    public function destroyOrderdetails( $id) // удалить
-   {
+   { //dd($id);
+        $order_id=ChangedocumentOrder::findOrFail($id)->order_id;
+       // dd($order_id);
+        ChangedocumentOrder::destroy($id);
+        
+       return redirect(route("nomenclature", $order_id));
        
    }
 

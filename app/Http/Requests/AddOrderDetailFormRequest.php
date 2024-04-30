@@ -22,9 +22,9 @@ class AddOrderDetailFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //"order_id"=>["required"],
-           // "changedocument_id"=>["required"],
-          //  "need"=>["required"],
+            "order_id"=>["required"],
+           "changedocument_id"=>["required"],
+          "need"=>["required"],
         ];
     }
 }

@@ -23,8 +23,9 @@
 								<tr><th>  <a href="{{route ('orders.show',$order->id )}}">{{$order->number}}</a> </th> <th>{!! $order->description !!}</th><th>{!! $order->Organization->title !!}</th>
 									@auth('admin')
 										<td>
+										<a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Редактировать</a>
 											<form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
-											<a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Редактировать</a>
+											
 												@csrf
 												@method('DELETE')
 												<button type="submit" >Удалить</button>
