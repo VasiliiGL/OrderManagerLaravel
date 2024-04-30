@@ -16,8 +16,8 @@
 							<table>
 								<caption>Номенклатура заказа </caption>
                                 <tr><th> Обозначение </th> <th>Наименование</th><th>Количество,шт</th>
-                                @foreach($orderdetails as $detail)
-                                <tr><th>  {{$detail->designdocument->designation}}</a> </th> <th>{{$detail->designdocument->name}}</th><th>{{$detail->pivot->need}}</th>
+                                @foreach($order->changedocuments as $changedocument)
+                                <tr><th>  {{$changedocument->designdocument->designation}}</a> </th> <th>{{$changedocument->designdocument->name}}</th><th>{{$changedocument->pivot->need}}</th>
                                         <td>
 											<form action="#" method="POST">
 											<a href="#" class="button">Изменить</a>
@@ -26,35 +26,22 @@
 												<button type="submit" >Удалить</button>
 											</form>
 										</td>
-
                                 @endforeach
-								
-                               
 							</table>
-
-
-
-                                    @auth('web')
-                                        <td>										
-											<a href="{{route('addorderdetails', $order->id)}}" class="button">Добавить позицию</a>										
-										</td>
-										<td>										
-											<a href="{{route('nomenclature', $order->id)}}" class="button">Сохранить</a>										
-										</td>
-                                        
-									@endauth
+                            @auth('web')
+                                <td>										
+									<a href="{{route('addorderdetails', $order->id)}}" class="button">Добавить позицию</a>										
+								</td>
 								
+								<td>										
+									<a href="{{route('home')}}"class="button">Назад</a>										
+								</td> 
+							@endauth
 
-							<ul class="actions">
-								<li><a href="{{route('home')}}" class="button">Назад</a></li>
-							</ul>
 						</div>
                            
-						</div>
-                        
 					</div>
-                   
-                    
+                        					                
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">

@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PostController;
 use App\Models\Organization;
@@ -41,15 +42,16 @@ Route::get('/orgConnection',[OrganizationController::class, 'orgConnection'])->n
 
 //Страница номенклатура заказа
 
-Route::get('/nomenclature/{id}', [OrderController::class,'nomenclature'])->name('nomenclature');
+Route::get('/nomenclature/{id}', [OrderController::class,'indexOrderdetails'])->name('nomenclature');
+Route::post('/storeOrderdetails',[OrderController::class,'storeOrderdetails'])->name('storeOrderdetails'); //добавить
+Route::get('/editOrderdetails/{id}',[OrderController::class,'editOrderdetails'])->name('editOrderdetails'); //изменить
+Route::put('/updateOrderdetails/{id}',[OrderController::class,'updateOrderdetails'])->name('updateOrderdetails'); //обновить
+Route::delete('/destroyOrderdetails/{id}',[OrderController::class,'destroyOrderdetails'])->name('destroyOrderdetails'); //удалить
 
-
-
-
-Route::middleware("auth")->group(function(){
+    Route::middleware("auth:web")->group(function(){
     Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
-    Route::get('/addorderdetail/{id}',[OrderController::class,'addorderdetails'])->name('addorderdetails');
-    Route::post('/addorderdetail_process', [OrderController::class, 'addorderdetailProcess'])->name('addorderdetail_process');
+    Route::get('/addorderdetail/{id}',[OrderController::class,'createOrderdetails'])->name('createOrderdetails'); //создать
+    Route::post('/addorderdetail_process', [OrderController::class, 'createOrderdetailProcess'])->name('addorderdetail_process');
     Route::post('/posts/comment/{id}',[PostController::class,'comment'])->name('comment');
 });
 
@@ -64,4 +66,6 @@ Route::middleware("guest")->group(function(){
     Route::post('/customerregister_process',[AuthController::class, 'register'])->name('customer.register_process');
     Route::get('/customerlogout',[AuthController::class, 'logout'])->name('customer.logout');
 });
+
+
 

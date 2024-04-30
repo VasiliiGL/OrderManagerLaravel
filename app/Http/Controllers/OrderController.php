@@ -66,95 +66,115 @@ $x=1;
         "order" =>$order, 
     ]);
    }
-
-   public function nomenclature($id)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   public function indexOrderdetails($id)
    {
     
     $order = Order::findOrFail($id);
-    $orderdetails = $order->changedocuments;
 
-    $nomenclature = Designdocument::where ('type','чертеж')->orderBy('designation','asc');
+    $changedocument_orders = ChangedocumentOrder::where ('order_id',$id)->orderBy("created_at","DESC")->paginate(10);
+
     $changedocuments = Changedocument::where('designdocument_id','$nomenclature->id')->paginate(10);
-    //dd($order->changedocuments);
-    //dd($nomenclature);
-    return view('orders.orderdetails',[
-        "order" =>$order, "orderdetails" =>$orderdetails,"changedocuments"=>$changedocuments,
+
+    return view('orders.indexOrderdetails',[
+        "order" =>$order, "changedocument_orders" =>$changedocument_orders,
     ]);
    }
 
-   public function addorderdetails($id)
+   public function createOrderdetails($id)
    {
-    $order = Order::findOrFail($id);
+        $order = Order::findOrFail($id);
 
-    $nomenclature_id = Designdocument::where ('type','чертеж')->orderBy('designation','asc')->pluck('id');//->orderBy('designation','asc')->paginate(10)->value('id');
-    //dd($nomenclature_id);
-    $changedocuments = Changedocument::whereIn('designdocument_id',$nomenclature_id)->get();
-    
-    //dd($changedocuments);
+        $nomenclature_id = Designdocument::where ('type','чертеж')->orderBy('designation','asc')->pluck('id');//->orderBy('designation','asc')->paginate(10)->value('id');
 
+        $changedocuments = Changedocument::whereIn('designdocument_id',$nomenclature_id)->get();
 
-    //$nomenclature = Designdocument::where ('type','чертеж')->orderBy('designation','asc')->paginate(10);
-    //$nomenclature = Changedocument::orderBy("designdocument_id", "DESC")->paginate(10);
-
-    $nomenclature = $changedocuments;
-    return view('orders.addorderdetails',[
-        "order" =>$order, "nomenclature"=>$nomenclature,
-    ]);
-
+        $nomenclature = $changedocuments;
+        return view('orders.addorderdetails',[
+            "order" =>$order, "nomenclature"=>$nomenclature,
+        ]);
    }
 
      
-   public function addorderdetailProcess(Request $request)
+   public function createOrderdetailProcess(Request $request) //создать
    {
+    $data=$request->validate([
+        "order_id"=>'required',
+        "changedocument_id"=>'required',
+        "need"=>'required|integer',
+    ]);
+
+    $nomenclature=Order::findOrFail($request['order_id'])->changedocuments;
+
+    $order=Order::findOrFail($data['order_id']);
+
+    $changedocument_order=ChangedocumentOrder::findOrFail($request['changedocument_id']);
+
+ /*   foreach($nomenclature as $pozition)
+    {
+        if(($pozition->designdocument_id)==$request['changedocument_id'])
+        {
+           // dd($pozition->designdocument_id);
+
+            $new_need=$request['need']+$changedocument_order->need;
+
+           // dd( $new_need);
+
+            $changedocument_order->update([
+                'need' => $request['need'] +$changedocument_order->need ,
+
+
+            ]);
+        }
+        else {
+            //dd($changedocument_order);
+           
+        }
     
-       $data=$request->validate([
-           "detail"=>'required|string|min:4|max:30',
-           "need"=>'required|integer',
-       ]);
-       dd ($request);
+    }*/
 
       // $changedocument_id =$request["designdocument_id"];
 
-         $changedocument_order = ChangedocumentOrder::create([
+      
+        $changedocument_order = ChangedocumentOrder::create([
         'changedocument_id' => $request['changedocument_id'],
         'order_id' => $request['order_id'],
         'need' => $request['need'],
-      ]);
+        ]);
 
-       $addDetail = ChangedocumentOrder::create($changedocument_order->validated());
-       return redirect(route("orders.show"));
+        
+      $order_id = $request['order_id'];
+
+      // $addDetail = ChangedocumentOrder::create($changedocument_order->validated());
+       return redirect(route("nomenclature", $order_id));
    }
-/* $data=$request->validate([
-            "name"=>'required|numeric|min:170000|max:170999|unique:users,name',
-            "lastname"=>'required|string|min:4|max:30',
-            "fathername"=>'required|string|min:4|max:30',
-            "firstname"=>'required|string|min:4|max:30',
-            "jobtitle"=>'required|string|min:4|max:30',
-            "organization"=>'required|string|min:4|max:30',
-            "workphone"=>'required|numeric',
-            "personalphone"=>'required|numeric',
-            'email'=>'required|min:4|max:100|email|string|unique:users,email',
-            'password'=>'required|min:4|max:100|confirmed'
-        ]);
 
-        $user = User::create([
-            "name"=>$data["name"],
-            'email'=>$data["email"],
-            'password'=>bcrypt($data["password"])
-        ]);
+   public function storeOrderdetails(Request $request) //добавить
+   {
+       
+   }
 
-        $userdetails = UserDetail::create([
-            'user_id'=>$user["id"],
-            'organization_id'=> '1',
-            'lastname'=>$data[ "lastname"],
-            'fathername'=>$data["fathername"],
-            'firstname'=>$data["firstname"],
-            "jobtitle"=>$data["jobtitle"],
-            "workphone"=>$data["workphone"],
-            "personalphone"=>$data["personalphone"]
+   public function editOrderdetails($id) // изменить
+   {
+       
+   }
 
-        ]);*/
+   public function updateOrderdetails(Request $request, $id) // обновить
+   {
+       
+   }
 
+   public function destroyOrderdetails( $id) // удалить
+   {
+       
+   }
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    public function selectorganization()
    {
@@ -168,4 +188,11 @@ $x=1;
        Order::destroy($id);
        return redirect(route('home'));
    }
+
+   public function destroyPozition(string $id)
+   {
+
+     
+   }
+
 }

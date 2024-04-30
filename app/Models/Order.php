@@ -41,7 +41,7 @@ class Order extends Model
     }
     public function changedocuments()
     {
-        return $this->belongsToMany(Changedocument::class)->withPivot('need');
+        return $this->belongsToMany(Changedocument::class,'changedocument_orders')->withPivot('need');
     }
 
 }

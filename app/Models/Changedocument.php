@@ -32,7 +32,7 @@ class Changedocument extends Model
 
     public function orders()
     {
-        return $this->belongsToMany(Changedocument::class)->withPivot('need');
+        return $this->belongsToMany(Order::class,'changedocument_orders')->withPivot('need');
     }
 
     public function assemblyunits()

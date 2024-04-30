@@ -24,7 +24,7 @@
 									@auth('admin')
 										<td>
 											<form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
-											<a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Изменить</a>
+											<a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Редактировать</a>
 												@csrf
 												@method('DELETE')
 												<button type="submit" >Удалить</button>
@@ -33,7 +33,8 @@
 									@endauth
 									@auth('web')
 										<td>										
-											<a href="{{route('nomenclature', $order->id)}}" class="button">Редактировать</a>										
+											<a href="{{route('nomenclature', $order->id)}}" class="button">Редактировать</a>
+																				
 										</td>
 									@endauth
 								@endforeach

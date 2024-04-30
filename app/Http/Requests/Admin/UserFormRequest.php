@@ -23,9 +23,16 @@ class UserFormRequest extends FormRequest
     {
         return [
             "name"=>["required"],
+            //"name"=>'required|numeric|min:160000|max:170999|unique:users,name',
             'password'=>'required|min:4|max:100|confirmed',
-            'email'=>'required|min:4|max:100|email|string|unique:users,email',
-            
+            'email'=>'required|min:4|max:100|email|string',       //|unique:users,email
+            "lastname"=>'required|string|min:4|max:30',
+            "fathername"=>'required|string|min:4|max:30',
+            "firstname"=>'required|string|min:4|max:30',
+            "jobtitle"=>'required|string|min:4|max:30',
+            "organization_id"=>'required',
+            "workphone"=>'required|numeric',
+            "personalphone"=>'required|numeric',                    
         ];
     }
 }

@@ -12,8 +12,8 @@
                                 @foreach($usersDetail as $userDetail)
                                     <tr> <th>{!! $userDetail->User->name !!}</th> <th>  {!! $userDetail->User->email !!} </th> <th>{!! $userDetail->lastname!!}</th>  <th>{!! $userDetail->firstname!!}</th><th>{!! $userDetail->fathername!!}</th><th>{!! $userDetail->jobtitle!!}</th><th>{!! $userDetail->Organization->title !!}</th>
                                     <td>
-                                        <form action="#" method="POST">
-                                        <a href="#" class="button">Изменить</a>
+                                    <a href="{{route('admin.users.edit', $userDetail->id)}}" class="button">Изменить</a>
+                                        <form action="{{route('admin.users.destroy', $userDetail->id)}}" method="POST">                                                                           
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" >Удалить</button>

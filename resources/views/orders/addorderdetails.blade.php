@@ -15,11 +15,11 @@
 
 									<h2 > Заказ {{$order->number}} / {{$order->Organization->title}}  </h1>
 
-									
 									<form enctype="multipart/form-data" method="POST" action="{{ route('addorderdetail_process') }}" >
 										@csrf
+
 										<label for="order_id"></label>
-											<input type="hidden" name="order" type="text" class="form-control" placeholder="Заказ" value ="<?php echo $order->id; ?>" />
+											<input type="hidden" name="order_id" type="text" class="form-control" placeholder="Заказ" value ="{{$order->id}}" />
 											@error('order_id')
 												<p class="text-red-500">{{$message}}</p>
 											@enderror
@@ -28,7 +28,7 @@
 											<select name="changedocument_id">
 												
 												@foreach ($nomenclature as $changedocument)
-												<option value ="<?php echo $changedocument->id; ?>" > {{$changedocument->designdocument->designation}} / {{$changedocument->number}}</option>
+												<option value ="{{$changedocument->id}}" > {{$changedocument->designdocument->designation}} / {{$changedocument->number}}</option>
 												@endforeach
 											</select> 
 										</p>
@@ -37,15 +37,17 @@
 										@enderror
 										
 										<label for="need">Количество, шт</label>
-										<input name="need" type="text" class="form-control" placeholder="Количество"/>
+										<input name="need" type="number" class="form-control" placeholder="Количество"/>
 										@error('need')
 											<p class="text-red-500">{{$message}}</p>
 										@enderror
+										<br /> <br />
+										<button type="submit" class="btn btn-lg btn-primary">Добавить </button>
 
 									</form>
 
 									<ul class="actions">
-									<button type="submit" class="btn btn-lg btn-primary">Добавить </button>
+										
 										<li><a href="{{route('home')}}" class="button">Назад</a></li>
 									</ul>
 						</div>

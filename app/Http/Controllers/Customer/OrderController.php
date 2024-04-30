@@ -15,11 +15,12 @@ class OrderController extends Controller
     public function index()
     {
       //dd($request);
-        $x=1;
+        //$x=1;
+        $x=auth('customer')->id;
         //dd( $x);
         //$orders = Order::orderBy("created_at","DESC")->paginate(3);
    
-        $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(3);
+        $orders = Order::where ('customer_id',$x)->orderBy('number','asc')->paginate(10);
         $customer= Customer::find ($x);
   
  
@@ -37,7 +38,7 @@ class OrderController extends Controller
         //$orders = Order::orderBy("created_at","DESC")->paginate(3);
         $customer =auth('customer')->user();
 
-        $orders = Order::where ('customer_id',$customer->id)->orderBy('number','asc')->paginate(5);
+        $orders = Order::where ('customer_id',$customer->id)->orderBy('number','asc')->cursorPaginate(10);;
        // $customer= Customer::find ($id);
 //dd($customer);
          return view('customer.orders.index',[
