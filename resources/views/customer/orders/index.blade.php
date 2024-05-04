@@ -11,39 +11,43 @@
 						<div class="inner">
                             <!-- Header -->
                             @include('partials.header')
-			 <!--Перечень заказов -->
-							<table>
-								<caption>Перечень заказов {{$customer->title}}</caption>
-								<tr><th> Номер заказа </th> <th>Описание</th><th>Изготовитель</th>
-								@foreach($orders as $order)
+			 		<!--Перечень заказов -->
+							<div>
+								<table>
+									<caption>Перечень заказов {{$customer->title}}</caption>
+									<tr><th> Номер заказа </th> <th>Описание</th><th>Изготовитель</th>
+									@foreach($orders as $order)
 
-								<tr><th>  <a href="{{route ('orders.show',$order->id )}}">{{$order->number}}</a> </th> <th>{!! $order->description !!}</th><th>{!! $order->Organization->title !!}</th>
-								<!--<td>
-                                        <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
-                                        <a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Изменить</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" >Удалить</button>
-                                        </form>
-                                    </td>-->
-								@endforeach
+									<tr>
+										<th>  <a href="{{route ('orders.show',$order->id )}}">{{$order->number}}</a> </th> <th>{!! $order->description !!}</th><th>{!! $order->Organization->title !!}</th>
+										<td>
+									<!--      <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
+											<a href="{{route( 'admin.orders.edit', $order->id)}}" class="button">Изменить</a>
+												@csrf
+												@method('DELETE')
+												<button type="submit" >Удалить</button>
+											</form>-->
+										</td>
+									</tr>
+									@endforeach
 
-							</table>
-								
+								</table>
+							</div>
+									
 
-                           <div  {{$orders->links()}}  </div>    
-						   <br />
-						   	<ul class="actions" >
-								<li><a href="{{route('customer.createOrder')}}" class="button">Новый заказ</a></li>
-							</ul>
-						
-							<ul class="actions">
-								<li><a href="{{route('home')}}" class="button">Назад</a></li>
-							</ul>
+                           	<!--	<div  {{$orders->links()}}  </div>    -->
+							<br />
+								<ul class="actions" >
+									<li><a href="{{route('customer.createOrder')}}" class="button">Новый заказ</a></li>
+								</ul>
+							
+								<ul class="actions">
+									<li><a href="{{route('home')}}" class="button">Назад</a></li>
+								</ul>
 
-							<ul class="actions">
-								<li><a href="{{route('customer.logout')}}" class="button">Выход</a></li>
-							</ul>
+								<ul class="actions">
+									<li><a href="{{route('customer.logout')}}" class="button">Выход</a></li>
+								</ul>
 						</div>
 					
 					</div>
@@ -68,4 +72,5 @@
 					</div>
 
 			</div>
-@endsection
+			
+			@endsection

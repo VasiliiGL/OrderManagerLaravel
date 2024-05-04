@@ -15,7 +15,7 @@ class DesigndocumentController extends Controller
      */
     public function index()
     {
-        $designdocuments = Designdocument::orderBy("designation", "ASC")->paginate(10);
+        $designdocuments = Designdocument::orderBy("designation", "ASC")->cursorPaginate(10);
         return view('admin.designdocument.index',[
          "designdocuments"=>$designdocuments,
         ]);
@@ -40,7 +40,7 @@ class DesigndocumentController extends Controller
     public function store(DesigndocumentFormRequest $request)
     {
         $designdocuments = Designdocument::create($request->validated());
-        return redirect(route("admin.designdocuments.index"));
+        return redirect(route("admin.designdocument.index"));
     }
 
     /**
@@ -56,15 +56,32 @@ class DesigndocumentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $types=type::cases();
+        $designdocument=Designdocument::findOrFail($id);
+  
+        return view('admin.designdocument.create',[
+            'types'=>$types,'designdocument'=>$designdocument,
+
+
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(DesigndocumentFormRequest $request, string $id)
     {
-        //
+        $datas = $request->validated();
+        //dd($datas);
+        $designdocument=Designdocument::findOrFail($id);
+        //dd($designdocument);
+        $designdocument->update([
+            'designation'=>$datas["designation"],
+            'name'=>$datas["name"],
+            "type"=>$datas["type"],
+        ]);
+
+        return redirect(route('admin.designdocument.index'));
     }
 
     /**

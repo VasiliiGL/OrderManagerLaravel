@@ -9,9 +9,10 @@
 
                     <table>
                     <caption>Перечень извещений</caption>
-					<tr><th> Номер извещения </th><th> Дата </th> 
+					<tr><th> Номер извещения </th><th> Дата </th> <th> Описнаие </th> <th> Фаил-извещения </th> 
 					@foreach($notices as $notice)
                     <tr> <th>{!! $notice->designation !!}</th>  <th>{!! $notice->data !!}</th> 
+                    <th>{!! $notice->description !!}</th>  <th>{!! $notice->documentfile !!}</th>
                                     <td>
                                         <form action="{{ route('admin.notice.destroy', $notice->id) }}" method="POST">
                                         <a href="{{route( 'admin.notice.edit', $notice->id)}}" class="button">Изменить</a>

@@ -13,7 +13,7 @@
 
             @include('partials.header')
             <!-- Section create designdocument -->
-			@include('admin.designdocument.createform',$types)
+			@include('admin.designdocument.createform')
       
 
        

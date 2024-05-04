@@ -28,7 +28,8 @@
           
 
             <!-- Menu menu-->
-           
+                    
+                        <button> <a href="{{route('home')}}"> Главная страница </a></button>
 
             <!-- Section contacts -->
                 @include('partials.contacts')

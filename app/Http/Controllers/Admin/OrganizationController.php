@@ -13,7 +13,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        $organizations = Organization::orderBy("created_at", "DESC")->paginate(10);
+        $organizations = Organization::orderBy("created_at", "DESC")->cursorPaginate(10);
         return view('admin.organizations.index',[
          "organizations"=>$organizations,
         ]);

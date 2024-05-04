@@ -28,7 +28,7 @@ class OrderFormRequest extends FormRequest
             "data"=>["date"],
             "description"=>["required"],
             "desiredDate"=>["required"],
-            "letter"=>["file"],
+            "letter"=>["image"],
             
         ];
     }

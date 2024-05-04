@@ -30,7 +30,7 @@
                 
 
                     <!-- Menu menu-->
-                
+                        @include('partials.menu')
 
                     <!-- Section contacts -->
                         @include('partials.contacts')

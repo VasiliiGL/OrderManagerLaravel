@@ -17,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-     $orders = Order::orderBy("created_at","DESC")->paginate(3);
+     $orders = Order::orderBy("created_at","DESC")->cursorPaginate(3);
 
     return view('admin.orders.index',[
         "orders"=>$orders, 

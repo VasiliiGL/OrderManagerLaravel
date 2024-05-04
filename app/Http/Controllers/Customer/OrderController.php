@@ -101,7 +101,7 @@ class OrderController extends Controller
     public function createOrderFormProcess(OrderForm $request )
     {
         //dd($request);
-        $order = Order::create($request->validated()); // попадают только те поля которые указаны в првилах FormRequest
+        $order = Order::create($request->validated()); // попадают только те поля которые указаны в правилах FormRequest
 
         return redirect(route('customer.orders.showAll','1'));
 

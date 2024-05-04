@@ -11,6 +11,7 @@ class Changedocument extends Model
 
     protected $fillable = [
         "designdocument_id",
+        "notice_id",
         "number",
         "documentfile"
     ];

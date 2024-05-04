@@ -21,11 +21,12 @@ class ChangedocumentFormRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            "designdocument_id"=>'required|id',
-            "notice_id"=>'required|id',
-            'number'=>'required|numeric',
-            "documentfile"=>'file',
+            "designdocument_id"=>'required',
+            "notice_id"=>'required',
+            "number"=>'required',
+            "documentfile"=>'image',
         ];
     }
 }

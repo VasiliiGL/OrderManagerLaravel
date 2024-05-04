@@ -25,7 +25,7 @@ class NoticeFormRequest extends FormRequest
             'designation'=>["required"],
             'data'=>["date"],
             'description'=>["required"],
-            'documentfile'=>['file'],
+            'documentfile'=>['image'],
         ];
     }
 }

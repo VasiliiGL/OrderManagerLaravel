@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ChangedocumentFormRequest;
 use App\Models\Changedocument;
+use App\Models\Designdocument;
+use App\Models\Notice;
 use Illuminate\Http\Request;
 
 class ChangedocumentController extends Controller
@@ -14,7 +16,7 @@ class ChangedocumentController extends Controller
      */
     public function index()
     {
-        $changedocuments = Changedocument::orderBy("created_at","DESC")->paginate(10);
+        $changedocuments = Changedocument::orderBy("created_at","DESC")->cursorPaginate(10);
         return view("admin.changedocuments.index",[
             "changedocuments"=>$changedocuments,
         ]
@@ -26,7 +28,12 @@ class ChangedocumentController extends Controller
      */
     public function create()
     {
-        return view('admin.changedocuments.create',[]);
+        $notices = Notice::get();
+        //dd($notices);
+        $designdocuments =Designdocument::get();
+        return view('admin.changedocuments.create',[
+            "notices"=> $notices, "designdocuments"=>$designdocuments,
+        ]);
     }
 
     /**
@@ -34,7 +41,18 @@ class ChangedocumentController extends Controller
      */
     public function store(ChangedocumentFormRequest $request)
     {
-        $customer= Changedocument::create($request->validated());
+        //dd($request);
+        $data =$request->validated();
+
+        if($request->has("documentfile"))
+        {
+            $documentfile = str_replace("public/document","", $request->file('documentfile')->store("public/document"));
+            $data["documentfile"] =  $documentfile;
+        }
+
+        $changedocument= Changedocument::create($data);
+
+
 
         return redirect(route("admin.changedocument.index"));
     }
@@ -52,15 +70,40 @@ class ChangedocumentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $notices = Notice::get();
+        //dd($notices);
+        $designdocuments =Designdocument::get();
+        $changedocument =Changedocument::findOrFail($id);
+        return view('admin.changedocuments.create',[
+            "notices"=> $notices, "designdocuments"=>$designdocuments,"changedocument"=>$changedocument,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ChangedocumentFormRequest $request, string $id)
     {
-        //
+        $data =$request->validated();
+        $changedocument= Changedocument::findOrFail($id);
+        if($request->has("documentfile"))
+        {
+            $documentfile = str_replace("public/document","", $request->file('documentfile')->store("public/document"));
+            $data["documentfile"] =  $documentfile;
+        }
+        $changedocument->update($data);
+
+        return redirect(route('admin.changedocument.index'));
+
+
+
+       /* $changedocument->update([
+            "designdocument_id"=>$data["designdocument_id"],
+            'notice_id'=>$data["notice_id"],
+            'number'=>$data["number"],
+            'documentfile'=>$data["documentfile"],
+        ]);*/
+
     }
 
     /**

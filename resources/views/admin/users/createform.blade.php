@@ -3,7 +3,7 @@
     <div class="bg-white w-96 shadow-x1 rounted p-5">
         <h1 class="text-3x1 font-medium">{{ isset($userDetail->user) ? "Редактировать данные пользователя - Login: {$userDetail->user->name}":'Создать учетную запись пользователя'}}</h1>
 
-        <form enctype="multipart/form-data"  method="POST" action="{{ isset($userDetail->user) ? route('admin.users.update', $userDetail): route('admin.users.store') }}"   class="col-3 offset-4">
+        <form enctype="multipart/form-data"  method="POST" action="{{ isset($userDetail->user) ? route('admin.users.update', $userDetail): route('admin.users.store') }}"  >
             @csrf
 
             @if(isset($userDetail->user))

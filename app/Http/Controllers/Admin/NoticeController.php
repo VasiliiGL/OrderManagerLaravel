@@ -14,7 +14,7 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notices=Notice::orderBy("created_at","DESC")->paginate(10);
+        $notices=Notice::orderBy("created_at","DESC")->cursorPaginate(10);
         return view("admin.notices.index",[
             "notices"=>$notices,
         ]
@@ -34,7 +34,16 @@ class NoticeController extends Controller
      */
     public function store(NoticeFormRequest $request)
     {
-        $notice = Notice::create($request->validated());
+        $data =$request->validated();
+
+        if($request->has("documentfile"))
+        {
+            $documentfile = str_replace("public/notice","", $request->file('documentfile')->store("public/notice"));
+            $data["documentfile"] =  $documentfile;
+        }
+
+
+        $notice = Notice::create($data);
 
         return redirect(route("admin.notice.index"));
     }
@@ -52,15 +61,32 @@ class NoticeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $notice=Notice::findOrFail($id);
+        return view('admin.notices.create',[
+            "notice"=>$notice,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(NoticeFormRequest $request, string $id)
     {
-        //
+        $data =$request->validated();
+        $notice=Notice::findOrFail($id);
+        
+
+        if($request->has("documentfile"))
+        {
+            $documentfile = str_replace("public/notice","", $request->file('documentfile')->store("public/notice"));
+            $data["documentfile"] =  $documentfile;
+        }
+        $notice->update($data);
+
+
+
+
+        return redirect(route("admin.notice.index"));
     }
 
     /**
